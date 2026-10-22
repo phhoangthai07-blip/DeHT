@@ -85,6 +85,11 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
 #quizModal .feedback{margin-top:10px;}
 #quizModal .quiz-actions{position:sticky;bottom:0;z-index:4;flex:0 0 auto;margin:12px calc(-1 * clamp(14px,2.5vh,24px)) calc(-1 * clamp(14px,2.5vh,24px));padding:12px clamp(14px,2.5vh,24px) max(12px,env(safe-area-inset-bottom));background:rgba(248,248,255,.96);border-top:1px solid rgba(126,116,190,.20);border-radius:0 0 22px 22px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
 #quizModal .quiz-actions .btn{min-width:108px;min-height:44px;}
+.quiztop{flex-wrap:wrap;align-items:center;gap:8px;}
+.streak-rule-note{font-size:11px;color:var(--muted);text-align:right;margin-top:7px;line-height:1.35;}
+.answer-streak-badge{display:inline-flex;align-items:center;justify-content:center;gap:5px;background:rgba(242,239,255,.94);border:1px solid #ddd6ff;color:#6253c8;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:900;white-space:nowrap;}
+.answer-streak-badge.multiplier{background:linear-gradient(120deg,#fff0c2,#ffe3a0);border-color:#f8cd65;color:#895719;box-shadow:0 3px 12px #f0bd452e;}
+@media(max-width:480px){.answer-streak-badge{font-size:10px;padding:5px 7px;}}
 @media(max-height:650px){#quizModal .quizwrap{padding:12px;max-height:calc(100dvh - 12px)}#quizModal .quizcard{padding:12px;margin-top:8px!important}#quizModal .quizword{margin:5px 0;font-size:25px}#quizModal .answers{margin-top:10px;gap:6px}#quizModal .answer{padding:9px}#quizModal .quiz-actions{bottom:0;margin:8px -12px -12px;padding:8px 12px max(8px,env(safe-area-inset-bottom))}}
 @media(max-width:480px){#quizModal.show{padding: max(6px,env(safe-area-inset-top)) 6px max(6px,env(safe-area-inset-bottom))}#quizModal .quizwrap{border-radius:18px}#quizModal .answers{grid-template-columns:1fr}#quizModal .quiz-actions .btn{flex:1;min-width:0;padding:10px 12px}}
 
@@ -185,7 +190,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
       <div class="panel"><div class="iconbox">💎</div><h3>Kim cương</h3><div class="big"><span id="petGems">0</span></div><p>Hoàn thành câu hỏi đúng để nhận kim cương.</p></div>
       <div class="panel"><div class="iconbox">✨</div><h3>Đang trang bị</h3><div class="pet-equipped-list" id="petEquipped">Chưa có phụ kiện</div><p>Mỗi vị trí có thể mang một món; bạn có thể phối nhiều món cùng lúc.</p></div>
     </div>
-    <div class="panel pet-store-panel" style="margin-top:16px"><div class="panel-head"><div><h3>🛍️ Cửa hàng phụ kiện</h3><p>Mỗi món có vị trí riêng: đầu, mắt, cổ, lưng, tay hoặc hiệu ứng. Có thể phối nhiều món khác vị trí.</p></div><span class="pet-store-count" id="petItemCount">25 món</span></div><div class="pet-filter-row"><button class="pet-filter active" data-pet-filter="all" onclick="filterPetItems('all')">Tất cả</button><button class="pet-filter" data-pet-filter="head" onclick="filterPetItems('head')">🎩 Đầu</button><button class="pet-filter" data-pet-filter="eyes" onclick="filterPetItems('eyes')">👓 Mắt</button><button class="pet-filter" data-pet-filter="neck" onclick="filterPetItems('neck')">🧣 Cổ</button><button class="pet-filter" data-pet-filter="back" onclick="filterPetItems('back')">🎒 Lưng</button><button class="pet-filter" data-pet-filter="hand" onclick="filterPetItems('hand')">🪄 Tay</button><button class="pet-filter" data-pet-filter="aura" onclick="filterPetItems('aura')">✨ Hiệu ứng</button></div><div class="shop-grid" id="petShop"></div></div>
+    <div class="panel pet-store-panel" style="margin-top:16px"><div class="panel-head"><div><h3>🛍️ Cửa hàng phụ kiện</h3><p>Mỗi món có vị trí riêng: đầu, mắt, cổ, lưng, tay hoặc hiệu ứng. Có thể phối nhiều món khác vị trí.</p></div><span class="pet-store-count" id="petItemCount">48 món</span></div><div class="pet-filter-row"><button class="pet-filter active" data-pet-filter="all" onclick="filterPetItems('all')">Tất cả</button><button class="pet-filter" data-pet-filter="head" onclick="filterPetItems('head')">🎩 Đầu</button><button class="pet-filter" data-pet-filter="eyes" onclick="filterPetItems('eyes')">👓 Mắt</button><button class="pet-filter" data-pet-filter="neck" onclick="filterPetItems('neck')">🧣 Cổ</button><button class="pet-filter" data-pet-filter="back" onclick="filterPetItems('back')">🎒 Lưng</button><button class="pet-filter" data-pet-filter="hand" onclick="filterPetItems('hand')">🪄 Tay</button><button class="pet-filter" data-pet-filter="aura" onclick="filterPetItems('aura')">✨ Hiệu ứng</button></div><div class="shop-grid" id="petShop"></div></div>
   </section>
   <section class="section" id="rank">
     <div class="grid">
@@ -207,7 +212,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
       <div class="panel" style="margin-top:18px;background:#fafaff;box-shadow:none"><h3>🔐 Bảo mật</h3><p style="margin-top:6px">Chỉ đặt <b>Project URL</b> và <b>anon/public key</b> trong ứng dụng web. Tuyệt đối không đưa <b>service_role key</b> vào HTML. Bật Row Level Security (RLS) để người dùng chỉ truy cập dữ liệu của chính mình.</p></div>
     </div>
   </section>
-  <div class="footer">DeHT • Học một chút, tiến bộ mỗi ngày 🇩🇪<br>Phiên bản <span id="footerVersion">1.1.0</span> • Dữ liệu tiến độ lưu trên trình duyệt nếu chưa kết nối Supabase.</div>
+  <div class="footer">DeHT • Học một chút, tiến bộ mỗi ngày 🇩🇪<br>Phiên bản <span id="footerVersion">1.2.0</span> • Dữ liệu tiến độ lưu trên trình duyệt nếu chưa kết nối Supabase.</div>
 </main>
 </div>
 <nav class="bottom-taskbar" id="bottomTaskbar" aria-label="Thanh điều hướng DeHT">
@@ -220,11 +225,11 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
  <button class="task-item" data-page="rank"><span>🏆</span><small>Xếp hạng</small></button>
  <button class="task-item" data-page="account"><span>👤</span><small>Tài khoản</small></button>
 </nav>
-<div class="modal" id="quizModal"><div class="modalbox quizwrap"><div class="quiztop"><span id="quizMode">BÀI HỌC</span><span id="quizProgress">1 / 5</span></div><div class="progress"><span id="quizBar" style="width:0%"></span></div><div class="quizcard" style="margin-top:17px"><div class="eyebrow">CHỌN NGHĨA ĐÚNG</div><div class="quizword" id="quizWord">Hallo</div><div class="muted" id="quizHint">Từ tiếng Đức</div><button class="btn ghost" onclick="speakCurrent()" style="margin-top:10px">🔊 Nghe phát âm</button><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div><div id="reviewActions" class="bar" style="justify-content:center;margin-top:10px;display:none"><button class="btn line" onclick="gradeWord(false)">Cần ôn lại</button><button class="btn primary" onclick="gradeWord(true)">Đã nhớ ✓</button></div></div><div class="bar quiz-actions" style="justify-content:space-between"><button class="btn line" type="button" onclick="closeQuiz()" aria-label="Thoát bài học">← Thoát</button><button class="btn primary" type="button" id="nextBtn" onclick="nextQuestion()" disabled>Tiếp tục →</button></div></div></div>
+<div class="modal" id="quizModal"><div class="modalbox quizwrap"><div class="quiztop"><span id="quizMode">BÀI HỌC</span><span id="answerStreakBadge" class="answer-streak-badge" title="Từ 3 câu đúng liên tiếp, mỗi câu đúng nhận gấp đôi kim cương">🔥 Chuỗi đúng: 0/3</span><span id="quizProgress">1 / 5</span></div><div class="progress"><span id="quizBar" style="width:0%"></span></div><div class="streak-rule-note">💎 Đúng 3 câu liên tiếp: nhận 2 kim cương mỗi câu đúng. Trả lời sai sẽ đặt lại chuỗi.</div><div class="quizcard" style="margin-top:17px"><div class="eyebrow">CHỌN NGHĨA ĐÚNG</div><div class="quizword" id="quizWord">Hallo</div><div class="muted" id="quizHint">Từ tiếng Đức</div><button class="btn ghost" onclick="speakCurrent()" style="margin-top:10px">🔊 Nghe phát âm</button><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div><div id="reviewActions" class="bar" style="justify-content:center;margin-top:10px;display:none"><button class="btn line" onclick="gradeWord(false)">Cần ôn lại</button><button class="btn primary" onclick="gradeWord(true)">Đã nhớ ✓</button></div></div><div class="bar quiz-actions" style="justify-content:space-between"><button class="btn line" type="button" onclick="closeQuiz()" aria-label="Thoát bài học">← Thoát</button><button class="btn primary" type="button" id="nextBtn" onclick="nextQuestion()" disabled>Tiếp tục →</button></div></div></div>
 <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" onclick="if(event.target===this)closeInfo()">
   <div class="modalbox info-modalbox">
     <div class="info-modal-header"><div class="info-brand-mark" aria-hidden="true">🇩🇪</div><div class="grow"><div class="eyebrow">GIỚI THIỆU ỨNG DỤNG</div><h2 id="infoTitle">Thông tin DeHT</h2><p class="muted">Học một chút, tiến bộ mỗi ngày.</p></div><button class="info-close" type="button" onclick="closeInfo()" aria-label="Đóng thông tin">✕</button></div>
-    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.1.0</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
+    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.2.0</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
     <div class="info-details">
       <div class="info-detail-row"><span class="info-detail-icon">👨‍💻</span><div><small>Phát triển bởi</small><strong>Pham Hoang Thai</strong></div></div>
       <div class="info-detail-row"><span class="info-detail-icon">🎓</span><div><small>Ứng dụng</small><strong>DeHT — Học tiếng Đức</strong><p>Hỗ trợ học từ vựng, luyện tập và theo dõi tiến độ từ A1 đến B2.</p></div></div>
@@ -239,7 +244,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
 <div class="toast" id="toast"></div>
 <script>
 // Cập nhật hằng số này khi phát hành phiên bản DeHT mới.
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 function syncAppVersion(){
   const footer=document.getElementById('footerVersion');
   const info=document.getElementById('infoVersion');
@@ -268,8 +273,9 @@ const SUPABASE_URL = 'DAN_PROJECT_URL_CUA_BAN_VAO_DAY';
 const SUPABASE_PUBLISHABLE_KEY = 'DAN_PUBLISHABLE_KEY_CUA_BAN_VAO_DAY';
 const $=id=>document.getElementById(id);
 const KEY='deht-v1-progress';
-const defaultState={xp:0,gems:0,streak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],username:'Người học',user:null,pet:{owned:[],equipped:null,level:1}};
-let state=loadState(), pageIndex=0, quiz={items:[],index:0,correct:0,answered:false,mode:'lesson',current:null};
+const defaultState={xp:0,gems:0,streak:0,answerStreak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],username:'Người học',user:null,pet:{owned:[],equipped:null,level:1}};
+let state=loadState(), pageIndex=0, quiz={items:[],index:0,correct:0,gemsEarned:0,answered:false,mode:'lesson',current:null};
+state.answerStreak=Math.max(0,Number(state.answerStreak)||0);
 function loadState(){try{return {...defaultState,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return {...defaultState}}}
 function save(){localStorage.setItem(KEY,JSON.stringify(state));renderStats()}
 function today(){return new Date().toLocaleDateString('en-CA')}
@@ -299,7 +305,30 @@ const PET_ITEMS=[
 {id:'sparkles',name:'Hào quang lấp lánh',emoji:'✨',price:30,desc:'Những tia sáng quanh linh vật.',slot:'aura',slotName:'Hiệu ứng'},
 {id:'hearts',name:'Vòng tim hồng',emoji:'💖',price:29,desc:'Những trái tim bay quanh Cú Hoot.',slot:'aura',slotName:'Hiệu ứng'},
 {id:'fire',name:'Hào quang năng lượng',emoji:'🔥',price:34,desc:'Hiệu ứng năng lượng rực rỡ.',slot:'aura',slotName:'Hiệu ứng'},
-{id:'bubbles',name:'Bong bóng phép thuật',emoji:'🫧',price:23,desc:'Bong bóng óng ánh quanh người bạn.',slot:'aura',slotName:'Hiệu ứng'}
+{id:'bubbles',name:'Bong bóng phép thuật',emoji:'🫧',price:23,desc:'Bong bóng óng ánh quanh người bạn.',slot:'aura',slotName:'Hiệu ứng'},
+{id:'beret',name:'Mũ nồi nghệ sĩ',emoji:'🎨',price:19,desc:'Chiếc mũ nồi mềm mại cho cú mèo sáng tạo.',slot:'head',slotName:'Đầu'},
+{id:'beanie',name:'Mũ len mùa đông',emoji:'🧶',price:18,desc:'Giữ ấm khi Cú Hoot học từ vựng mùa đông.',slot:'head',slotName:'Đầu'},
+{id:'detectivehat',name:'Mũ thám tử',emoji:'🕵️',price:27,desc:'Cùng Cú Hoot truy tìm nghĩa của từ mới.',slot:'head',slotName:'Đầu'},
+{id:'cowboyhat',name:'Mũ cao bồi',emoji:'🤠',price:29,desc:'Phong cách cao bồi cho hành trình ngôn ngữ.',slot:'head',slotName:'Đầu'},
+{id:'catears',name:'Băng đô tai mèo',emoji:'🐱',price:24,desc:'Đôi tai mèo tinh nghịch trên đầu cú.',slot:'head',slotName:'Đầu'},
+{id:'tiara',name:'Vương miện pha lê',emoji:'💎',price:48,desc:'Vương miện lấp lánh dành cho người học chăm chỉ.',slot:'head',slotName:'Đầu'},
+{id:'monocle',name:'Kính một mắt quý tộc',emoji:'🧐',price:26,desc:'Một món kính cổ điển thật thông thái.',slot:'eyes',slotName:'Mắt'},
+{id:'blueshades',name:'Kính xanh đại dương',emoji:'🕶️',price:23,desc:'Cặp kính xanh mát đầy cá tính.',slot:'eyes',slotName:'Mắt'},
+{id:'visor',name:'Kính phi hành gia',emoji:'🥽',price:33,desc:'Tấm kính tương lai cho nhà thám hiểm vũ trụ.',slot:'eyes',slotName:'Mắt'},
+{id:'bluescarf',name:'Khăn choàng xanh',emoji:'🧣',price:18,desc:'Khăn len xanh dịu mắt.',slot:'neck',slotName:'Cổ'},
+{id:'pearlnecklace',name:'Vòng ngọc trai',emoji:'📿',price:31,desc:'Chuỗi ngọc trang nhã trên ngực Cú Hoot.',slot:'neck',slotName:'Cổ'},
+{id:'greenbow',name:'Nơ xanh lá',emoji:'🎀',price:21,desc:'Chiếc nơ xanh tươi cho ngày học vui vẻ.',slot:'neck',slotName:'Cổ'},
+{id:'batwings',name:'Cánh dơi đêm',emoji:'🦇',price:42,desc:'Đôi cánh bí ẩn phía sau lưng.',slot:'back',slotName:'Lưng'},
+{id:'butterflywings',name:'Cánh bướm cầu vồng',emoji:'🦋',price:46,desc:'Đôi cánh màu sắc lung linh.',slot:'back',slotName:'Lưng'},
+{id:'jetpack',name:'Ba lô phản lực',emoji:'🚀',price:39,desc:'Thiết bị phản lực mini cho cú mèo khám phá.',slot:'back',slotName:'Lưng'},
+{id:'pencil',name:'Bút chì thần kỳ',emoji:'✏️',price:16,desc:'Bút chì giúp Cú Hoot ghi nhớ từ mới.',slot:'hand',slotName:'Tay'},
+{id:'microphone',name:'Micro luyện nói',emoji:'🎤',price:28,desc:'Cầm micro để luyện phát âm tiếng Đức.',slot:'hand',slotName:'Tay'},
+{id:'pretzel',name:'Bánh xoắn Đức',emoji:'🥨',price:17,desc:'Món bánh đặc trưng trong chuyến du học.',slot:'hand',slotName:'Tay'},
+{id:'snowflakes',name:'Bão tuyết lấp lánh',emoji:'❄️',price:29,desc:'Bông tuyết bay quanh linh vật.',slot:'aura',slotName:'Hiệu ứng'},
+{id:'musicnotes',name:'Nốt nhạc vui vẻ',emoji:'🎵',price:25,desc:'Những nốt nhạc bay cùng mỗi bài học.',slot:'aura',slotName:'Hiệu ứng'},
+{id:'rainbow',name:'Cầu vồng may mắn',emoji:'🌈',price:45,desc:'Vòng cung cầu vồng kỳ diệu phía sau Cú Hoot.',slot:'aura',slotName:'Hiệu ứng'},
+{id:'stardust',name:'Bụi sao vũ trụ',emoji:'🌠',price:32,desc:'Bụi sao lấp lánh quanh người bạn.',slot:'aura',slotName:'Hiệu ứng'},
+{id:'confetti',name:'Pháo giấy ăn mừng',emoji:'🎉',price:34,desc:'Pháo giấy rực rỡ cho thành tích mới.',slot:'aura',slotName:'Hiệu ứng'}
 ];
 let petShopFilter='all';
 function ensurePet(){
@@ -342,6 +371,29 @@ function petAccessoryArt(id){
     case 'hearts':return `<g fill="#ff83b8" stroke="#fff" stroke-width="1.5"><path d="M44 98 C28 83 17 104 44 122 C71 104 60 83 44 98Z"/><path d="M190 117 C177 103 166 120 190 138 C214 120 203 103 190 117Z"/><path d="M51 160 C40 148 30 164 51 180 C72 164 62 148 51 160Z"/><path d="M185 64 C176 55 168 68 185 80 C202 68 194 55 185 64Z"/></g>`;
     case 'fire':return `<g stroke="#fff0c9" stroke-width="1.5" stroke-linejoin="round"><path d="M48 151 Q31 129 48 110 Q46 130 60 133 Q55 115 69 103 Q80 132 69 151 Q59 163 48 151Z" fill="#ff965e"/><path d="M188 151 Q171 129 188 110 Q186 130 200 133 Q195 115 209 103 Q220 132 209 151 Q199 163 188 151Z" fill="#ffb54f"/></g>`;
     case 'bubbles':return `<g fill="#b5f0ff" fill-opacity=".6" stroke="#fff" stroke-width="2"><circle cx="39" cy="125" r="10"/><circle cx="53" cy="89" r="6"/><circle cx="194" cy="98" r="11"/><circle cx="183" cy="153" r="7"/><circle cx="39" cy="171" r="5"/><path d="M35 122 q3 -5 7 -2 M190 94 q4 -4 7 -1" fill="none" stroke="#fff" stroke-width="2"/></g>`;
+    case 'beret':return `<g stroke="#6f3d89" stroke-width="2" stroke-linejoin="round"><path d="M75 75 Q79 51 108 52 Q134 51 151 72 Q116 82 75 75Z" fill="#c84f90"/><path d="M104 53 Q120 47 134 61" fill="none" stroke="#f7a5d0" stroke-width="4" stroke-linecap="round"/><circle cx="141" cy="61" r="4" fill="#ffe58b"/></g>`;
+    case 'beanie':return `<g stroke="#4968a4" stroke-width="2" stroke-linejoin="round"><path d="M77 76 Q80 48 112 49 Q143 48 152 76Z" fill="#67bfe3"/><path d="M77 71 Q115 79 152 71 L151 81 Q114 88 78 81Z" fill="#438fca"/><circle cx="113" cy="47" r="8" fill="#ffda75" stroke="#fff0b7"/></g>`;
+    case 'detectivehat':return `<g stroke="#5b526e" stroke-width="2" stroke-linejoin="round"><path d="M78 72 Q82 56 101 55 L102 49 Q121 43 136 56 Q147 59 153 72 Q117 80 78 72Z" fill="#8e8a9e"/><path d="M72 73 Q116 68 160 75 L153 84 Q113 87 78 82Z" fill="#b4b0c3"/><path d="M103 53 L134 57" stroke="#dedbe7" stroke-width="3"/></g>`;
+    case 'cowboyhat':return `<g stroke="#9b6236" stroke-width="2" stroke-linejoin="round"><path d="M88 71 Q87 43 105 41 Q119 51 133 41 Q151 44 151 71Z" fill="#d99a54"/><path d="M72 73 Q116 64 165 73 Q149 88 90 83Z" fill="#f1bd73"/><path d="M92 69 Q118 75 146 69" fill="none" stroke="#fff0c6" stroke-width="4"/></g>`;
+    case 'catears':return `<g stroke="#8f5ab7" stroke-width="2.5" stroke-linejoin="round"><path d="M82 77 L83 43 Q85 36 92 45 L111 66Z" fill="#9f73d4"/><path d="M128 66 L148 44 Q155 37 158 46 L158 77Z" fill="#9f73d4"/><path d="M89 64 L90 51 L101 66Z M139 65 L151 50 L151 66Z" fill="#ffb5d4" stroke="none"/><path d="M82 77 Q120 86 158 77" fill="none" stroke="#d9b5ff" stroke-width="4"/></g>`;
+    case 'tiara':return `<g stroke="#6d63cb" stroke-width="2" stroke-linejoin="round"><path d="M83 78 L86 58 L102 69 L119 45 L137 69 L153 58 L157 78Z" fill="#c9c7ff"/><path d="M83 78 Q119 87 157 78" fill="none" stroke="#ffe67d" stroke-width="5"/><circle cx="119" cy="58" r="4" fill="#ff8ec5"/><circle cx="101" cy="69" r="3" fill="#73e6ee"/><circle cx="138" cy="69" r="3" fill="#73e6ee"/></g>`;
+    case 'monocle':return `<g fill="none" stroke="#e3b94d" stroke-width="3"><circle cx="145" cy="111" r="20"/><path d="M145 131 Q153 145 147 153" stroke-linecap="round"/><circle cx="145" cy="111" r="16" stroke="#fff4b4" stroke-width="1.5"/></g>`;
+    case 'blueshades':return `<g stroke="#2d6da0" stroke-width="4" fill="#3b9ddd" fill-opacity=".78"><rect x="76" y="99" width="37" height="24" rx="8"/><rect x="127" y="99" width="37" height="24" rx="8"/><path d="M113 108 Q120 103 127 108 M76 106 L67 102 M164 106 L173 102" fill="none" stroke-linecap="round"/><path d="M82 103 L103 103 M134 103 L155 103" stroke="#d8f8ff" stroke-width="3"/></g>`;
+    case 'visor':return `<g stroke="#5a8da9" stroke-width="3"><path d="M77 91 Q120 79 163 91 L157 121 Q120 133 83 121Z" fill="#9ee5f4" fill-opacity=".5"/><path d="M82 96 Q120 86 158 96" fill="none" stroke="#fff" stroke-width="3"/><circle cx="100" cy="108" r="3" fill="#fff" stroke="none"/><circle cx="143" cy="108" r="3" fill="#fff" stroke="none"/></g>`;
+    case 'bluescarf':return `<g stroke="#2878b5" stroke-width="2" stroke-linejoin="round"><path d="M82 156 Q120 172 158 156 L154 171 Q120 184 86 171Z" fill="#4db8e8"/><path d="M136 168 L150 169 L152 198 L138 192Z" fill="#2788c8"/><path d="M91 162 Q120 171 149 162" fill="none" stroke="#c5f1ff" stroke-width="3"/></g>`;
+    case 'pearlnecklace':return `<g fill="#fff8ef" stroke="#dbb4d7" stroke-width="1.5">${Array.from({length:11},(_,i)=>{const a=Math.PI*(.12+i*.076);return `<circle cx="${120+32*Math.cos(a)}" cy="${164+20*Math.sin(a)}" r="4.2"/>`}).join('')}<circle cx="120" cy="184" r="5" fill="#ffcf6b" stroke="#fff0ad"/></g>`;
+    case 'greenbow':return `<g stroke="#328f65" stroke-width="2" stroke-linejoin="round"><path d="M114 160 L91 149 L94 170 L114 165Z" fill="#6bd39a"/><path d="M126 160 L149 149 L146 170 L126 165Z" fill="#6bd39a"/><circle cx="120" cy="162" r="6" fill="#ffe27b"/></g>`;
+    case 'batwings':return `<g stroke="#50456e" stroke-width="2.5" stroke-linejoin="round"><path d="M91 116 Q69 88 45 102 L53 123 L40 130 L58 143 L54 159 L81 157 L98 143Z" fill="#6c608f"/><path d="M149 116 Q171 88 195 102 L187 123 L200 130 L182 143 L186 159 L159 157 L142 143Z" fill="#6c608f"/><path d="M52 111 L79 140 M187 111 L160 140" stroke="#c5b9f7" stroke-width="2"/></g>`;
+    case 'butterflywings':return `<g stroke="#fff" stroke-width="2"><path d="M91 121 Q63 84 48 108 Q38 138 77 149 Q49 166 73 180 Q93 170 103 144Z" fill="#ff9bca"/><path d="M149 121 Q177 84 192 108 Q202 138 163 149 Q191 166 167 180 Q147 170 137 144Z" fill="#78d8ed"/><path d="M61 115 Q77 122 78 139 M179 115 Q163 122 162 139" fill="none" stroke="#fff1a7" stroke-width="4"/></g>`;
+    case 'jetpack':return `<g stroke="#64708a" stroke-width="2" stroke-linejoin="round"><rect x="52" y="117" width="24" height="51" rx="8" fill="#bcc8d8"/><rect x="164" y="117" width="24" height="51" rx="8" fill="#bcc8d8"/><rect x="56" y="126" width="16" height="23" rx="5" fill="#6dd6e8"/><rect x="168" y="126" width="16" height="23" rx="5" fill="#6dd6e8"/><path d="M57 169 L62 188 L69 169 M169 169 L174 188 L181 169" fill="#ffab61" stroke="#f47758" stroke-width="2"/></g>`;
+    case 'pencil':return `<g transform="translate(69 158) rotate(-25)" stroke="#b56a36" stroke-width="2"><rect x="-5" y="-24" width="10" height="48" rx="2" fill="#ffd75e"/><path d="M-5 -24 L0 -36 L5 -24Z" fill="#f2c4a2"/><path d="M-5 17 L5 17 L0 26Z" fill="#4e4b63"/><path d="M-4 -15 L4 -15" stroke="#fff3b4" stroke-width="2"/></g>`;
+    case 'microphone':return `<g transform="translate(69 158) rotate(-20)" stroke="#515272" stroke-width="2"><rect x="-7" y="-22" width="14" height="30" rx="7" fill="#4b4f70"/><path d="M-12 -5 Q-12 13 0 13 Q12 13 12 -5" fill="none" stroke="#8f94b8" stroke-width="3"/><path d="M0 13 L0 24 M-8 24 L8 24" stroke-linecap="round"/><path d="M-4 -15 L4 -15 M-4 -9 L4 -9" stroke="#f8d86c" stroke-width="2"/></g>`;
+    case 'pretzel':return `<g transform="translate(69 158) rotate(-12)" fill="none" stroke="#c77a36" stroke-width="7" stroke-linecap="round"><path d="M-16 -8 C-26 -26 -4 -28 0 -11 C4 -28 26 -26 16 -8 C10 4 -10 4 -16 -8Z"/><path d="M-15 -7 Q-9 11 0 1 Q9 11 15 -7" stroke="#e6a24d" stroke-width="6"/><path d="M-12 -19 L-9 -17 M10 -21 L13 -19 M-1 -20 L2 -19" stroke="#fff2c1" stroke-width="2"/></g>`;
+    case 'snowflakes':return `<g stroke="#d9f7ff" stroke-width="2.5" stroke-linecap="round" fill="none"><g transform="translate(43 98)"><path d="M-9 0 H9 M0 -9 V9 M-6 -6 L6 6 M-6 6 L6 -6"/></g><g transform="translate(192 87) scale(.8)"><path d="M-9 0 H9 M0 -9 V9 M-6 -6 L6 6 M-6 6 L6 -6"/></g><g transform="translate(191 171) scale(.65)"><path d="M-9 0 H9 M0 -9 V9 M-6 -6 L6 6 M-6 6 L6 -6"/></g><g transform="translate(47 169) scale(.6)"><path d="M-9 0 H9 M0 -9 V9 M-6 -6 L6 6 M-6 6 L6 -6"/></g></g>`;
+    case 'musicnotes':return `<g fill="#ff83c4" stroke="#fff4fb" stroke-width="1.5"><path d="M44 93 V72 L61 67 V88 Q61 95 54 95 Q47 95 49 89 Q51 84 57 86 V77 L48 80 V94 Q47 101 40 99 Q34 96 38 91 Q40 88 44 89Z"/><path d="M179 119 V98 L196 93 V114 Q196 121 189 121 Q182 121 184 115 Q186 110 192 112 V103 L183 106 V120 Q182 127 175 125 Q169 122 173 117 Q175 114 179 115Z"/><circle cx="57" cy="154" r="4"/><circle cx="185" cy="164" r="3"/></g>`;
+    case 'rainbow':return `<g fill="none" stroke-linecap="round"><path d="M43 163 A77 77 0 0 1 197 163" stroke="#ff7da7" stroke-width="8"/><path d="M51 163 A69 69 0 0 1 189 163" stroke="#ffbe61" stroke-width="7"/><path d="M59 163 A61 61 0 0 1 181 163" stroke="#ffe77b" stroke-width="7"/><path d="M67 163 A53 53 0 0 1 173 163" stroke="#7bdba8" stroke-width="7"/><path d="M75 163 A45 45 0 0 1 165 163" stroke="#7dcdf2" stroke-width="7" opacity=".9"/></g>`;
+    case 'stardust':return `<g fill="#ffe77b" stroke="#fff8d1" stroke-width="1.2"><path d="M40 88 L44 99 L55 103 L44 107 L40 118 L36 107 L25 103 L36 99Z"/><path d="M195 80 L199 90 L209 94 L199 98 L195 108 L191 98 L181 94 L191 90Z"/><path d="M191 168 L195 177 L204 181 L195 185 L191 194 L187 185 L178 181 L187 177Z"/><circle cx="53" cy="148" r="3"/><circle cx="174" cy="54" r="3"/><circle cx="69" cy="60" r="2.5"/></g>`;
+    case 'confetti':return `<g stroke-linecap="round" stroke-width="4"><path d="M38 99 l9 -7" stroke="#ff83af"/><path d="M53 132 l-5 9" stroke="#5bd2c2"/><path d="M43 164 l8 4" stroke="#f6c94c"/><path d="M185 84 l-8 6" stroke="#ae93ff"/><path d="M200 126 l-8 -2" stroke="#ff83af"/><path d="M184 169 l5 -8" stroke="#54c5ef"/><path d="M161 48 l-5 7" stroke="#f6c94c"/><path d="M74 46 l6 7" stroke="#5bd2c2"/><circle cx="59" cy="83" r="3" fill="#ff83af" stroke="none"/><circle cx="188" cy="145" r="3" fill="#a68dff" stroke="none"/></g>`;
     default:return '';
   }
 }
@@ -416,7 +468,7 @@ function startQuiz(mode){
   if(['A1','A2','B1','B2'].includes(mode))pool=VOCAB.filter(w=>w.level===mode);
   if(mode==='review'){pool=dueWords();if(!pool.length){pool=VOCAB.filter(w=>state.reviews[w.de]&&state.reviews[w.de].box<3);toast('Chưa có từ đến hạn; đang chọn từ cần củng cố.')}if(!pool.length)pool=VOCAB;}
   const count=mode==='quick'?5:mode==='review'?Math.min(10,pool.length):5;
-  quiz={items:shuffle([...pool]).slice(0,count),index:0,correct:0,answered:false,mode,current:null};
+  quiz={items:shuffle([...pool]).slice(0,count),index:0,correct:0,gemsEarned:0,answered:false,mode,current:null};
   if(!quiz.items.length){toast('Chưa có từ phù hợp.');return}
   $('quizMode').textContent=mode==='review'?'ÔN TẬP THÔNG MINH':mode==='quick'?'KIỂM TRA NHANH':'BÀI HỌC '+(mode==='lesson'?'HÔM NAY':mode);
   $('quizModal').classList.add('show');document.body.classList.add('quiz-open');showQuestion();
@@ -424,23 +476,35 @@ function startQuiz(mode){
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 function showQuestion(){
   const w=quiz.items[quiz.index];quiz.current=w;quiz.answered=false;
-  $('quizProgress').textContent=`${quiz.index+1} / ${quiz.items.length}`;$('quizBar').style.width=(quiz.index/quiz.items.length*100)+'%';
+  $('quizProgress').textContent=`${quiz.index+1} / ${quiz.items.length}`;$('quizBar').style.width=(quiz.index/quiz.items.length*100)+'%';updateAnswerStreakBadge();
   $('quizWord').textContent=w.de;$('quizHint').textContent=`Cấp độ ${w.level} · ${w.type}`;$('feedback').textContent='';$('reviewActions').style.display='none';$('nextBtn').disabled=true;$('nextBtn').textContent=quiz.index===quiz.items.length-1?'Hoàn thành ✓':'Tiếp tục →';
   const options=shuffle([w,...shuffle(VOCAB.filter(x=>x.de!==w.de)).slice(0,3)]);
   $('answers').innerHTML=options.map((o,i)=>`<button class="answer" data-answer="${i}">${esc(o.vi)}</button>`).join('');
   $('answers').querySelectorAll('button').forEach((b,i)=>b.addEventListener('click',()=>answer(options[i],b)));
 }
+function updateAnswerStreakBadge(){
+  const badge=$('answerStreakBadge');if(!badge)return;
+  const streak=Math.max(0,Number(state.answerStreak)||0);badge.classList.toggle('multiplier',streak>=3);
+  badge.textContent=streak>=3?`🔥 Chuỗi đúng: ${streak} · 💎 x2`:`🔥 Chuỗi đúng: ${streak}/3`;
+  badge.title=streak>=3?'Đang nhân đôi kim cương cho mỗi câu đúng tiếp theo. Trả lời sai sẽ đặt lại chuỗi.':'Trả lời đúng 3 câu liên tiếp để nhận gấp đôi kim cương. Trả lời sai sẽ đặt lại chuỗi.';
+}
 function answer(chosen,btn){
   if(quiz.answered)return;quiz.answered=true;const w=quiz.current,correct=chosen.de===w.de;
   $('answers').querySelectorAll('button').forEach(b=>{b.disabled=true;if(b.textContent===w.vi)b.classList.add('correct')});
-  if(correct){quiz.correct++;$('feedback').textContent='Chính xác! +5 XP ⚡';$('feedback').style.color='#16966a';state.xp+=5;state.gems+=1;state.daily=state.daily||{date:today(),xp:0};if(state.daily.date!==today())state.daily={date:today(),xp:0};state.daily.xp+=5;if(!state.learned.includes(w.de))state.learned.push(w.de);scheduleReview(w,true)}
-  else{$('feedback').textContent='Chưa đúng. Đáp án: '+w.vi;$('feedback').style.color='#d45b5b';scheduleReview(w,false)}
-  $('reviewActions').style.display='flex';$('nextBtn').disabled=false;save();
+  if(correct){
+    quiz.correct++;state.answerStreak=Math.max(0,Number(state.answerStreak)||0)+1;
+    const gemReward=state.answerStreak>=3?2:1;state.gems+=gemReward;quiz.gemsEarned=(quiz.gemsEarned||0)+gemReward;
+    $('feedback').textContent=state.answerStreak>=3?`Chính xác! +5 XP · +${gemReward} 💎 (x2 chuỗi ${state.answerStreak})`:`Chính xác! +5 XP · +${gemReward} 💎`;
+    $('feedback').style.color='#16966a';state.xp+=5;state.daily=state.daily||{date:today(),xp:0};if(state.daily.date!==today())state.daily={date:today(),xp:0};state.daily.xp+=5;if(!state.learned.includes(w.de))state.learned.push(w.de);scheduleReview(w,true);
+  }else{
+    state.answerStreak=0;$('feedback').textContent='Chưa đúng. Đáp án: '+w.vi+' · Chuỗi đúng đã được đặt lại.';$('feedback').style.color='#d45b5b';scheduleReview(w,false);
+  }
+  updateAnswerStreakBadge();$('reviewActions').style.display='flex';$('nextBtn').disabled=false;save();
 }
 function scheduleReview(w,good){const old=state.reviews[w.de]||{box:0,due:Date.now()};old.box=good?Math.min(5,old.box+1):0;const hours=good?[0,4,24,72,168,336][old.box]:1;old.due=Date.now()+hours*3600000;state.reviews[w.de]=old}
 function gradeWord(good){if(!quiz.current)return;scheduleReview(quiz.current,good);if(!good)toast('Đã thêm vào danh sách cần ôn.');else toast('Tốt lắm! Từ đã được ghi nhớ.');save();$('reviewActions').style.display='none';}
 function nextQuestion(){if(!quiz.answered)return;if(quiz.index<quiz.items.length-1){quiz.index++;showQuestion()}else{finishQuiz()}}
-function finishQuiz(){const total=quiz.items.length;state.history=state.history||[];state.history.push({date:today(),correct:quiz.correct,total});if(state.lastStudy!==today()){const y=new Date();y.setDate(y.getDate()-1);const yesterday=y.toLocaleDateString('en-CA');state.streak=state.lastStudy===yesterday?state.streak+1:1;state.lastStudy=today();ensurePet();if(state.streak>0&&state.streak%10===0){state.pet.level=(Number(state.pet.level)||1)+1;toast('🎉 Chuỗi '+state.streak+' ngày! Cú Hoot đã tiến hóa lên cấp '+state.pet.level+'!')}}save();$('quizModal').classList.remove('show');document.body.classList.remove('quiz-open');toast(`Hoàn thành! ${quiz.correct}/${total} câu đúng • +${quiz.correct*5} XP • +${quiz.correct} gems`);go('home')}
+function finishQuiz(){const total=quiz.items.length;state.history=state.history||[];state.history.push({date:today(),correct:quiz.correct,total});if(state.lastStudy!==today()){const y=new Date();y.setDate(y.getDate()-1);const yesterday=y.toLocaleDateString('en-CA');state.streak=state.lastStudy===yesterday?state.streak+1:1;state.lastStudy=today();ensurePet();if(state.streak>0&&state.streak%10===0){state.pet.level=(Number(state.pet.level)||1)+1;toast('🎉 Chuỗi '+state.streak+' ngày! Cú Hoot đã tiến hóa lên cấp '+state.pet.level+'!')}}save();$('quizModal').classList.remove('show');document.body.classList.remove('quiz-open');toast(`Hoàn thành! ${quiz.correct}/${total} câu đúng • +${quiz.correct*5} XP • +${quiz.gemsEarned||0} 💎`);go('home')}
 function closeQuiz(){$('quizModal').classList.remove('show');document.body.classList.remove('quiz-open')}
 function renderLeaderboard(){const people=[{name:state.username||'Bạn',xp:state.xp,emoji:'🦉',me:true},{name:'Lena',xp:1280,emoji:'🌷'},{name:'Max',xp:940,emoji:'🚀'},{name:'Minh Anh',xp:760,emoji:'🌟'},{name:'Jonas',xp:540,emoji:'🎧'}].sort((a,b)=>b.xp-a.xp);$('leaderboard').innerHTML=people.map((p,i)=>`<div class="rankrow"><div class="ranknum">${i+1}</div><div style="font-size:25px">${p.emoji}</div><div class="grow"><b>${esc(p.name)} ${p.me?'(bạn)':''}</b><small>${p.me?'Điểm của bạn trên thiết bị này':'Người học minh họa'}</small></div><b>${p.xp} XP</b></div>`).join('')}
 function exportProgress(){const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),progress:state},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='deht-progress.json';a.click();URL.revokeObjectURL(a.href);toast('Đã xuất tệp tiến độ.')}
