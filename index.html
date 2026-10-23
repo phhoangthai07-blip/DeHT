@@ -135,6 +135,17 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
 .info-modal-header{display:flex;align-items:center;gap:13px;margin-bottom:20px}.info-brand-mark{width:54px;height:54px;flex:0 0 54px;display:grid;place-items:center;border-radius:18px;background:linear-gradient(145deg,#fff,#e4e0ff);box-shadow:inset 0 1px 0 #fff,0 8px 20px #6857e81a;font-size:27px}.info-modal-header .grow{flex:1;min-width:0}.info-modal-header h2{font-size:24px;letter-spacing:-.04em;margin:2px 0}.info-modal-header p{margin:0;font-size:13px}.info-close{align-self:flex-start;width:34px;height:34px;border-radius:12px;background:#ffffffa6;color:#5b577a;font-size:16px}.info-version-card{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 18px;border:1px solid #dcd7ff;border-radius:18px;background:linear-gradient(120deg,#efedffdd,#e4f5ffb8);margin-bottom:14px}.info-version-card>div{display:grid;gap:3px}.info-label{font-size:10px;letter-spacing:.12em;font-weight:900;color:#7569be}.info-version-card strong{font-size:30px;line-height:1.15;letter-spacing:-.05em;color:#5649bf}.info-live-badge{display:flex;align-items:center;gap:7px;padding:7px 10px;border-radius:99px;background:#ffffffa8;font-size:12px;font-weight:800;color:#4e4b70}.info-live-badge span{width:7px;height:7px;border-radius:50%;background:#20a878;box-shadow:0 0 0 4px #20a87822}.info-details{display:grid;gap:0}.info-detail-row{display:flex;align-items:flex-start;gap:12px;padding:14px 2px;border-bottom:1px solid #dcdceda8}.info-detail-icon{width:37px;height:37px;flex:0 0 37px;display:grid;place-items:center;border-radius:13px;background:#ffffffad;font-size:18px}.info-detail-row>div{min-width:0;flex:1}.info-detail-row small{display:block;color:var(--muted);font-size:11px;margin-bottom:2px}.info-detail-row strong{display:block;font-size:14px}.info-detail-row p{margin:4px 0 0;font-size:12px;color:var(--muted);line-height:1.5}.info-note{margin-top:14px;padding:11px 13px;border-radius:13px;background:#ffffff85;color:#676184;font-size:12px;line-height:1.5}.info-modal-actions{display:flex;justify-content:flex-end;margin-top:17px}.info-modal-actions .btn{min-width:115px}
 @media(max-width:480px){.info-entry{padding:12px}.info-entry-copy small{max-width:240px}.info-modalbox{max-height:calc(100dvh - 20px);padding:18px}.info-modal-header h2{font-size:21px}.info-version-card{padding:14px}.info-detail-row{padding:12px 0}}
 
+
+/* Liquid Glass notebook / personal vocabulary memory */
+.memory-hero{position:relative;display:flex;align-items:center;gap:20px;overflow:hidden;padding:clamp(21px,4vw,34px);margin-bottom:18px;border-radius:28px;border:1px solid rgba(255,255,255,.88);background:linear-gradient(125deg,rgba(255,255,255,.72),rgba(226,221,255,.62) 45%,rgba(203,240,255,.62));box-shadow:0 18px 48px rgba(81,70,155,.12),inset 0 1px 0 #ffffff;backdrop-filter:blur(26px) saturate(165%);-webkit-backdrop-filter:blur(26px) saturate(165%)}
+.memory-hero:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-55px;top:-110px;background:rgba(255,255,255,.34);filter:blur(2px);pointer-events:none}
+.memory-orb{z-index:1;flex:0 0 76px;width:76px;height:76px;display:grid;place-items:center;border-radius:26px;font-size:39px;background:linear-gradient(145deg,#ffffffd9,#dcd5ffba);box-shadow:0 12px 28px rgba(100,83,200,.16),inset 0 1px 0 #fff}
+.memory-hero-copy{z-index:1;min-width:0;flex:1}.memory-hero-copy .eyebrow{color:#7565cb}.memory-hero h2{font-size:clamp(23px,3vw,31px);letter-spacing:-.045em;margin:3px 0 7px}.memory-hero p{max-width:680px;margin:0;color:#646580}.memory-total{display:inline-flex;margin-top:13px;padding:7px 11px;border-radius:99px;background:#ffffffa8;border:1px solid #ffffffc7;color:#6557bd;font-size:12px;font-weight:850}.memory-sparkle{z-index:1;font-size:42px;color:#9a8bf4;align-self:flex-start;text-shadow:0 6px 20px #9283ff55}
+.memory-layout{display:grid;grid-template-columns:minmax(260px,.83fr) minmax(0,1.17fr);gap:17px;align-items:start}.memory-form,.memory-notebook{background:rgba(255,255,255,.60);border:1px solid rgba(255,255,255,.88);box-shadow:0 13px 36px rgba(64,58,125,.10),inset 0 1px 0 #ffffffd9;backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%)}
+.memory-form-heading{display:flex;align-items:center;gap:12px;margin-bottom:21px}.memory-form-heading h3{margin:0 0 3px}.memory-form-heading p{font-size:12px}.memory-form-icon{display:grid;place-items:center;flex:0 0 47px;width:47px;height:47px;border-radius:16px;background:linear-gradient(145deg,#fff,#e4e0ff);box-shadow:0 6px 18px #7162d51b;font-size:23px}.memory-label{display:block;margin:15px 0 7px;font-size:13px;font-weight:850;color:#514b7b}.memory-input,.memory-textarea,.memory-search{border-color:#ffffffdb!important;background:rgba(255,255,255,.72)!important;box-shadow:inset 0 1px 2px rgba(80,65,130,.04),0 5px 16px rgba(68,57,128,.04)!important}.memory-textarea{min-height:112px;resize:vertical;line-height:1.55}.memory-input:focus,.memory-textarea:focus,.memory-search:focus{border-color:#9c91ff!important;box-shadow:0 0 0 4px #9588ff25!important}.memory-save{width:100%;margin-top:19px;padding:13px 16px}.memory-hint{font-size:11px!important;margin-top:12px!important}.memory-list-head{margin-bottom:13px}.memory-count-badge{white-space:nowrap;background:#ffffffa8;border:1px solid #ffffffd9;border-radius:99px;padding:7px 10px;color:#6256ac;font-size:11px;font-weight:900}.memory-search{margin-bottom:13px}.memory-list{display:grid;gap:11px}.memory-item{position:relative;min-width:0;padding:15px;border-radius:18px;border:1px solid #ffffffdc;background:linear-gradient(135deg,rgba(255,255,255,.80),rgba(244,241,255,.57));box-shadow:0 7px 20px rgba(64,58,125,.06),inset 0 1px 0 white;transition:transform .18s ease,box-shadow .18s ease}.memory-item:hover{transform:translateY(-1px);box-shadow:0 12px 25px rgba(64,58,125,.10),inset 0 1px 0 white}.memory-item-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}.memory-kind{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:9px;background:#ebe8ff;color:#6857c4;font-size:10px;font-weight:900}.memory-date{font-size:10px;color:#8886a3}.memory-word{font-size:19px;font-weight:900;letter-spacing:-.025em;overflow-wrap:anywhere;margin:0 0 7px}.memory-meaning{font-size:14px;color:#514c70;line-height:1.55;overflow-wrap:anywhere;padding:11px 12px;border-radius:12px;background:rgba(229,246,255,.58);border:1px solid #ffffffd9}.memory-meaning.is-hidden{position:relative;color:transparent!important;text-shadow:0 0 8px rgba(81,76,112,.45);user-select:none;pointer-events:none;overflow:hidden;min-height:42px}.memory-meaning.is-hidden:after{content:"Nghĩa đang được ẩn";position:absolute;inset:0;display:grid;place-items:center;color:#766db2;background:linear-gradient(90deg,rgba(246,244,255,.7),rgba(237,247,255,.8));text-shadow:none;filter:none;font-size:12px;font-weight:750;border-radius:inherit}.memory-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:11px}.memory-actions .btn{padding:8px 11px;font-size:12px}.memory-actions .btn.delete-memory{margin-left:auto;color:#a64f70;background:rgba(255,236,243,.7)}.memory-empty{display:grid;place-items:center;text-align:center;padding:34px 16px;border:1px dashed #cfc8f3;border-radius:16px;color:#777392;background:rgba(255,255,255,.25)}.memory-empty-icon{font-size:31px;margin-bottom:8px}.memory-empty strong{color:#5c557f;font-size:14px}.memory-empty p{font-size:12px;margin-top:5px}
+@media(max-width:850px){.memory-layout{grid-template-columns:1fr}.memory-hero{gap:14px}.memory-sparkle{font-size:31px}}
+@media(max-width:480px){.memory-hero{align-items:flex-start;padding:19px;gap:12px}.memory-orb{flex-basis:56px;width:56px;height:56px;border-radius:19px;font-size:30px}.memory-sparkle{display:none}.memory-hero h2{font-size:23px}.memory-hero p{font-size:13px}.memory-item{padding:13px}.memory-list-head{align-items:flex-start}}
+
 </style>
 </head>
 <body>
@@ -152,14 +163,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
       <div class="panel"><div class="iconbox">🎯</div><h3>Mục tiêu hằng ngày</h3><div class="big"><span id="dailyDone">0</span> / 10 XP</div><p>Hoàn thành một bài ngắn hôm nay.</p><div class="progress"><span id="dailyBar" style="width:0%"></span></div></div>
       <div class="panel"><div class="iconbox">🧠</div><h3>Ôn tập thông minh</h3><div class="big" id="dueCount">0</div><p>Từ cần ôn lại theo lịch lặp ngắt quãng.</p><button class="btn ghost" style="margin-top:13px" onclick="startQuiz('review')">Ôn tập ngay</button></div>
     </div>
-    <div class="panel" style="margin-top:16px"><div class="panel-head"><div><h3>Tiếp tục lộ trình</h3><p>Chọn cấp độ phù hợp với bạn</p></div><button class="btn ghost" onclick="go('learn')">Xem lộ trình</button></div><div class="lesson-list">
-      <div class="lesson"><div class="emoji">🌱</div><div class="grow"><h3>A1 · Người mới bắt đầu</h3><small>Chào hỏi, gia đình, số đếm, đồ vật</small></div><button class="btn primary" onclick="startQuiz('A1')">Học</button></div>
-      <div class="lesson"><div class="emoji">🌿</div><div class="grow"><h3>A2 · Giao tiếp hằng ngày</h3><small>Du lịch, mua sắm, thói quen</small></div><button class="btn ghost" onclick="startQuiz('A2')">Học</button></div>
-      <div class="lesson"><div class="emoji">🌳</div><div class="grow"><h3>B1 · Tự tin diễn đạt</h3><small>Ý kiến, công việc, trải nghiệm</small></div><button class="btn ghost" onclick="startQuiz('B1')">Học</button></div>
-      <div class="lesson"><div class="emoji">🚀</div><div class="grow"><h3>B2 · Diễn đạt nâng cao</h3><small>Xã hội, học tập, lập luận</small></div><button class="btn ghost" onclick="startQuiz('B2')">Học</button></div>
-    </div></div>
-  </section>
-  <section class="section" id="learn">
+
     <div class="panel"><div class="panel-head"><div><h3>🗺️ Lộ trình DeHT</h3><p>Mỗi bài 2–5 phút, học theo chủ đề và cấp độ.</p></div></div><div class="lesson-list">
       <div class="lesson"><div class="emoji">👋</div><div class="grow"><h3>A1 · Bài 1: Chào hỏi & giới thiệu</h3><small>Từ vựng cơ bản • 5 câu hỏi</small></div><button class="btn primary" onclick="startQuiz('A1')">Bắt đầu</button></div>
       <div class="lesson"><div class="emoji">🏠</div><div class="grow"><h3>A1 · Bài 2: Gia đình & nhà cửa</h3><small>Danh từ và mạo từ der/die/das</small></div><button class="btn ghost" onclick="startQuiz('A1')">Bắt đầu</button></div>
@@ -168,7 +172,15 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
       <div class="lesson"><div class="emoji">💼</div><div class="grow"><h3>B1 · Bài 1: Công việc & học tập</h3><small>Diễn đạt kế hoạch và kinh nghiệm</small></div><button class="btn ghost" onclick="startQuiz('B1')">Bắt đầu</button></div>
       <div class="lesson"><div class="emoji">🌍</div><div class="grow"><h3>B2 · Bài 1: Xã hội & công nghệ</h3><small>Từ vựng nâng cao và cụm từ</small></div><button class="btn ghost" onclick="startQuiz('B2')">Bắt đầu</button></div>
     </div></div>
+  
+    <div class="grid">
+      <div class="panel"><div class="iconbox">🏆</div><h3>Hạng của bạn</h3><div class="big" id="myRank">Tân binh</div><p>Dựa trên XP đã tích lũy trên thiết bị này.</p></div>
+      <div class="panel"><div class="iconbox">💎</div><h3>Kho báu</h3><div class="big"><span id="gemBank">0</span> gems</div><p>Nhận gems sau khi hoàn thành bài học.</p></div>
+      <div class="panel"><div class="iconbox">🦉</div><h3>Linh vật DeHT</h3><div class="big" id="rankPetLevel">Cú Hoot · Cấp 1</div><p>Nuôi linh vật và mua phụ kiện trong mục Linh vật.</p><button class="btn ghost" style="margin-top:12px" onclick="go('pet')">Chăm sóc Cú Hoot</button></div>
+    </div>
+    <div class="panel" style="margin-top:16px"><div class="panel-head"><div><h3>🌎 Bảng xếp hạng</h3><p>Bản hiện tại là bảng xếp hạng minh họa trên thiết bị. Bảng toàn cầu cần tài khoản và cơ sở dữ liệu Supabase.</p></div><span class="badge">LOCAL</span></div><div id="leaderboard"></div></div>
   </section>
+  
   <section class="section" id="practice">
     <div class="grid">
       <div class="panel"><div class="iconbox">🧠</div><h3>Ôn từ đến hạn</h3><p>Ưu tiên các từ bạn đã đánh dấu khó.</p><button class="btn primary" style="margin-top:15px" onclick="startQuiz('review')">Ôn tập</button></div>
@@ -183,6 +195,29 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
       <div class="wordlist" id="wordlist"></div><div class="bar" style="margin-top:15px"><button class="btn line" onclick="prevWords()">← Trước</button><button class="btn line" onclick="nextWords()">Tiếp →</button></div>
     </div>
   </section>
+  <section class="section" id="notes">
+    <div class="memory-hero">
+      <div class="memory-orb" aria-hidden="true">📒</div>
+      <div class="memory-hero-copy"><div class="eyebrow">DEIN WORTSCHATZ</div><h2>Cuốn sổ ghi nhớ của tôi</h2><p>Lưu từ tiếng Đức và nghĩa tiếng Việt của riêng bạn. Khi ôn lại, hãy thử nhớ nghĩa trước rồi mới bấm hiện đáp án.</p><div class="memory-total" id="memoryCount">0 mục đã lưu</div></div>
+      <div class="memory-sparkle" aria-hidden="true">✦</div>
+    </div>
+    <div class="memory-layout">
+      <form class="panel memory-form" id="memoryForm" onsubmit="saveMemory(event)">
+        <div class="memory-form-heading"><span class="memory-form-icon">✍️</span><div><h3>Ghi từ mới</h3><p>Hai ô đơn giản, lưu lại để xem bất cứ lúc nào.</p></div></div>
+        <label class="memory-label" for="memoryWord">Từ vựng tiếng Đức</label>
+        <input class="field memory-input" id="memoryWord" name="memoryWord" maxlength="160" placeholder="Ví dụ: die Bibliothek" autocomplete="off" required>
+        <label class="memory-label" for="memoryMeaning">Nghĩa tiếng Việt</label>
+        <textarea class="field memory-textarea" id="memoryMeaning" name="memoryMeaning" maxlength="700" placeholder="Ví dụ: thư viện" required></textarea>
+        <button class="btn primary memory-save" type="submit">💾 Lưu vào sổ ghi nhớ</button>
+        <p class="memory-hint">🔒 Sổ ghi nhớ được lưu trên trình duyệt của thiết bị này.</p>
+      </form>
+      <div class="panel memory-notebook">
+        <div class="panel-head memory-list-head"><div><h3>📚 Những từ đã lưu</h3><p>Ẩn nghĩa để tự kiểm tra trí nhớ của bạn.</p></div><span class="memory-count-badge" id="memoryFilteredCount">0 từ</span></div>
+        <input class="field memory-search" id="memorySearch" type="search" placeholder="🔎 Tìm trong sổ ghi nhớ..." oninput="renderNotes()" aria-label="Tìm trong sổ ghi nhớ">
+        <div class="memory-list" id="memoryList" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
   <section class="section" id="pet">
     <div class="hero pet-hero"><div class="pet-hero-copy"><div class="eyebrow" style="color:#eeeaff">BẠN ĐỒNG HÀNH DEHT</div><h2>Nuôi Cú Hoot 🦉</h2><p>Đây là linh vật của bạn — không còn chỉ là biểu tượng chữ. Mua phụ kiện bằng kim cương rồi trang bị theo từng vị trí để nhìn thấy chúng gắn trực tiếp lên Cú Hoot.</p><div class="pet-chip-row"><span>🧸 Mô hình 2D</span><span>🎒 6 vị trí phụ kiện</span><span>✨ Xem ngay khi trang bị</span></div></div><div id="petBig" class="pet-model-stage" role="img" aria-label="Mô hình Cú Hoot với các phụ kiện đang trang bị"></div></div>
     <div class="grid pet-stats">
@@ -192,14 +227,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
     </div>
     <div class="panel pet-store-panel" style="margin-top:16px"><div class="panel-head"><div><h3>🛍️ Cửa hàng phụ kiện</h3><p>Mỗi món có vị trí riêng: đầu, mắt, cổ, lưng, tay hoặc hiệu ứng. Có thể phối nhiều món khác vị trí.</p></div><span class="pet-store-count" id="petItemCount">48 món</span></div><div class="pet-filter-row"><button class="pet-filter active" data-pet-filter="all" onclick="filterPetItems('all')">Tất cả</button><button class="pet-filter" data-pet-filter="head" onclick="filterPetItems('head')">🎩 Đầu</button><button class="pet-filter" data-pet-filter="eyes" onclick="filterPetItems('eyes')">👓 Mắt</button><button class="pet-filter" data-pet-filter="neck" onclick="filterPetItems('neck')">🧣 Cổ</button><button class="pet-filter" data-pet-filter="back" onclick="filterPetItems('back')">🎒 Lưng</button><button class="pet-filter" data-pet-filter="hand" onclick="filterPetItems('hand')">🪄 Tay</button><button class="pet-filter" data-pet-filter="aura" onclick="filterPetItems('aura')">✨ Hiệu ứng</button></div><div class="shop-grid" id="petShop"></div></div>
   </section>
-  <section class="section" id="rank">
-    <div class="grid">
-      <div class="panel"><div class="iconbox">🏆</div><h3>Hạng của bạn</h3><div class="big" id="myRank">Tân binh</div><p>Dựa trên XP đã tích lũy trên thiết bị này.</p></div>
-      <div class="panel"><div class="iconbox">💎</div><h3>Kho báu</h3><div class="big"><span id="gemBank">0</span> gems</div><p>Nhận gems sau khi hoàn thành bài học.</p></div>
-      <div class="panel"><div class="iconbox">🦉</div><h3>Linh vật DeHT</h3><div class="big" id="rankPetLevel">Cú Hoot · Cấp 1</div><p>Nuôi linh vật và mua phụ kiện trong mục Linh vật.</p><button class="btn ghost" style="margin-top:12px" onclick="go('pet')">Chăm sóc Cú Hoot</button></div>
-    </div>
-    <div class="panel" style="margin-top:16px"><div class="panel-head"><div><h3>🌎 Bảng xếp hạng</h3><p>Bản hiện tại là bảng xếp hạng minh họa trên thiết bị. Bảng toàn cầu cần tài khoản và cơ sở dữ liệu Supabase.</p></div><span class="badge">LOCAL</span></div><div id="leaderboard"></div></div>
-  </section>
+  
   <section class="section" id="account">
     <div class="panel"><div class="panel-head"><div><h3>👤 Tài khoản DeHT</h3><p>Đăng nhập để chuẩn bị đồng bộ tiến độ giữa các thiết bị.</p></div><span class="badge" id="authBadge">Chưa kết nối</span></div>
       <div id="authStatus" class="muted">Hiện app đang chạy ở chế độ ngoại tuyến cục bộ. Bạn có thể học ngay, không cần đăng nhập.</div>
@@ -212,24 +240,23 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
       <div class="panel" style="margin-top:18px;background:#fafaff;box-shadow:none"><h3>🔐 Bảo mật</h3><p style="margin-top:6px">Chỉ đặt <b>Project URL</b> và <b>anon/public key</b> trong ứng dụng web. Tuyệt đối không đưa <b>service_role key</b> vào HTML. Bật Row Level Security (RLS) để người dùng chỉ truy cập dữ liệu của chính mình.</p></div>
     </div>
   </section>
-  <div class="footer">DeHT • Học một chút, tiến bộ mỗi ngày 🇩🇪<br>Phiên bản <span id="footerVersion">1.2.0</span> • Dữ liệu tiến độ lưu trên trình duyệt nếu chưa kết nối Supabase.</div>
+  <div class="footer">DeHT • Học một chút, tiến bộ mỗi ngày 🇩🇪<br>Phiên bản <span id="footerVersion">1.3.0</span> • Dữ liệu tiến độ lưu trên trình duyệt nếu chưa kết nối Supabase.</div>
 </main>
 </div>
 <nav class="bottom-taskbar" id="bottomTaskbar" aria-label="Thanh điều hướng DeHT">
  <span class="task-indicator" id="taskIndicator" aria-hidden="true"></span>
  <button class="task-item active" data-page="home"><span>⌂</span><small>Tổng quan</small></button>
- <button class="task-item" data-page="learn"><span>🗺️</span><small>Lộ trình</small></button>
  <button class="task-item" data-page="practice"><span>🎯</span><small>Luyện tập</small></button>
  <button class="task-item" data-page="vocab"><span>📚</span><small>Từ vựng</small></button>
+ <button class="task-item" data-page="notes"><span>📒</span><small>Ghi nhớ</small></button>
  <button class="task-item" data-page="pet"><span>🦉</span><small>Linh vật</small></button>
- <button class="task-item" data-page="rank"><span>🏆</span><small>Xếp hạng</small></button>
  <button class="task-item" data-page="account"><span>👤</span><small>Tài khoản</small></button>
 </nav>
 <div class="modal" id="quizModal"><div class="modalbox quizwrap"><div class="quiztop"><span id="quizMode">BÀI HỌC</span><span id="answerStreakBadge" class="answer-streak-badge" title="Từ 3 câu đúng liên tiếp, mỗi câu đúng nhận gấp đôi kim cương">🔥 Chuỗi đúng: 0/3</span><span id="quizProgress">1 / 5</span></div><div class="progress"><span id="quizBar" style="width:0%"></span></div><div class="streak-rule-note">💎 Đúng 3 câu liên tiếp: nhận 2 kim cương mỗi câu đúng. Trả lời sai sẽ đặt lại chuỗi.</div><div class="quizcard" style="margin-top:17px"><div class="eyebrow">CHỌN NGHĨA ĐÚNG</div><div class="quizword" id="quizWord">Hallo</div><div class="muted" id="quizHint">Từ tiếng Đức</div><button class="btn ghost" onclick="speakCurrent()" style="margin-top:10px">🔊 Nghe phát âm</button><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div><div id="reviewActions" class="bar" style="justify-content:center;margin-top:10px;display:none"><button class="btn line" onclick="gradeWord(false)">Cần ôn lại</button><button class="btn primary" onclick="gradeWord(true)">Đã nhớ ✓</button></div></div><div class="bar quiz-actions" style="justify-content:space-between"><button class="btn line" type="button" onclick="closeQuiz()" aria-label="Thoát bài học">← Thoát</button><button class="btn primary" type="button" id="nextBtn" onclick="nextQuestion()" disabled>Tiếp tục →</button></div></div></div>
 <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" onclick="if(event.target===this)closeInfo()">
   <div class="modalbox info-modalbox">
     <div class="info-modal-header"><div class="info-brand-mark" aria-hidden="true">🇩🇪</div><div class="grow"><div class="eyebrow">GIỚI THIỆU ỨNG DỤNG</div><h2 id="infoTitle">Thông tin DeHT</h2><p class="muted">Học một chút, tiến bộ mỗi ngày.</p></div><button class="info-close" type="button" onclick="closeInfo()" aria-label="Đóng thông tin">✕</button></div>
-    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.2.0</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
+    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.3.0</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
     <div class="info-details">
       <div class="info-detail-row"><span class="info-detail-icon">👨‍💻</span><div><small>Phát triển bởi</small><strong>Pham Hoang Thai</strong></div></div>
       <div class="info-detail-row"><span class="info-detail-icon">🎓</span><div><small>Ứng dụng</small><strong>DeHT — Học tiếng Đức</strong><p>Hỗ trợ học từ vựng, luyện tập và theo dõi tiến độ từ A1 đến B2.</p></div></div>
@@ -244,7 +271,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
 <div class="toast" id="toast"></div>
 <script>
 // Cập nhật hằng số này khi phát hành phiên bản DeHT mới.
-const APP_VERSION = '1.2.0';
+const APP_VERSION = '1.3.0';
 function syncAppVersion(){
   const footer=document.getElementById('footerVersion');
   const info=document.getElementById('infoVersion');
@@ -273,9 +300,10 @@ const SUPABASE_URL = 'DAN_PROJECT_URL_CUA_BAN_VAO_DAY';
 const SUPABASE_PUBLISHABLE_KEY = 'DAN_PUBLISHABLE_KEY_CUA_BAN_VAO_DAY';
 const $=id=>document.getElementById(id);
 const KEY='deht-v1-progress';
-const defaultState={xp:0,gems:0,streak:0,answerStreak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],username:'Người học',user:null,pet:{owned:[],equipped:null,level:1}};
+const defaultState={xp:0,gems:0,streak:0,answerStreak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],notes:[],username:'Người học',user:null,pet:{owned:[],equipped:null,level:1}};
 let state=loadState(), pageIndex=0, quiz={items:[],index:0,correct:0,gemsEarned:0,answered:false,mode:'lesson',current:null};
 state.answerStreak=Math.max(0,Number(state.answerStreak)||0);
+state.notes=Array.isArray(state.notes)?state.notes:[];
 function loadState(){try{return {...defaultState,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return {...defaultState}}}
 function save(){localStorage.setItem(KEY,JSON.stringify(state));renderStats()}
 function today(){return new Date().toLocaleDateString('en-CA')}
@@ -454,8 +482,40 @@ function renderStats(){
 function rankName(x){return x>=2000?'Bậc thầy':x>=1000?'Chuyên gia':x>=500?'Nhà thám hiểm':x>=200?'Người chăm chỉ':x>=50?'Học viên tích cực':'Tân binh'}
 function dueWords(){const now=Date.now();return VOCAB.filter(w=>state.reviews[w.de]&&state.reviews[w.de].due<=now)}
 function updateTaskIndicator(){const nav=$('bottomTaskbar'),indicator=$('taskIndicator'),active=nav?.querySelector('.task-item.active');if(!nav||!indicator||!active)return;const navRect=nav.getBoundingClientRect(),btnRect=active.getBoundingClientRect();indicator.style.width=btnRect.width+'px';indicator.style.transform=`translateX(${btnRect.left-navRect.left}px)`;indicator.style.opacity='1'}
-function go(id){document.querySelectorAll('.section').forEach(s=>{const was=s.classList.contains('active');s.classList.toggle('active',s.id===id);if(s.id===id&&was){s.style.animation='none';void s.offsetWidth;s.style.animation=''}});document.querySelectorAll('#bottomTaskbar button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));const names={home:['Chào mừng bạn! 👋','Bắt đầu một bài học ngắn ngay hôm nay.'],pet:['Nuôi linh vật 🦉','Giữ chuỗi học 10 ngày để nâng cấp Cú Hoot, dùng kim cương mua phụ kiện.'],learn:['Lộ trình học tập 🗺️','Từng bước từ A1 đến B2.'],practice:['Trung tâm luyện tập 🎯','Ôn tập thông minh và luyện kỹ năng mỗi ngày.'],vocab:['Kho từ vựng 📚','Tìm kiếm, lọc và học hơn 1.500 từ/cụm từ.'],rank:['Thành tích của bạn 🏆','Tích lũy XP và theo dõi tiến độ.'],account:['Tài khoản DeHT 👤','Chuẩn bị đồng bộ tiến độ an toàn.']};$('pageTitle').textContent=names[id][0];$('pageSub').textContent=names[id][1];if(id==='vocab')renderWords();if(id==='rank')renderLeaderboard();if(id==='pet')renderPet();requestAnimationFrame(updateTaskIndicator);window.scrollTo({top:0,behavior:'smooth'})}
+function go(id){document.querySelectorAll('.section').forEach(s=>{const was=s.classList.contains('active');s.classList.toggle('active',s.id===id);if(s.id===id&&was){s.style.animation='none';void s.offsetWidth;s.style.animation=''}});document.querySelectorAll('#bottomTaskbar button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));const names={home:['Chào mừng bạn! 👋','Lộ trình, thành tích và tiến độ học tập của bạn ở cùng một nơi.'],pet:['Nuôi linh vật 🦉','Giữ chuỗi học 10 ngày để nâng cấp Cú Hoot, dùng kim cương mua phụ kiện.'],practice:['Trung tâm luyện tập 🎯','Ôn tập thông minh và luyện kỹ năng mỗi ngày.'],vocab:['Kho từ vựng 📚','Tìm kiếm, lọc và học hơn 1.500 từ/cụm từ.'],notes:['Sổ ghi nhớ 📒','Tự tạo sổ từ vựng cá nhân, lưu nghĩa và ôn lại bất cứ lúc nào.'],account:['Tài khoản DeHT 👤','Chuẩn bị đồng bộ tiến độ an toàn.']};$('pageTitle').textContent=names[id][0];$('pageSub').textContent=names[id][1];if(id==='vocab')renderWords();if(id==='notes')renderNotes();if(id==='pet')renderPet();requestAnimationFrame(updateTaskIndicator);window.scrollTo({top:0,behavior:'smooth'})}
 $('bottomTaskbar').addEventListener('click',e=>{const b=e.target.closest('button[data-page]');if(b)go(b.dataset.page)});window.addEventListener('resize',updateTaskIndicator);window.addEventListener('load',()=>requestAnimationFrame(updateTaskIndicator));
+function saveMemory(event){
+  event.preventDefault();
+  const word=$('memoryWord').value.trim(),meaning=$('memoryMeaning').value.trim();
+  if(!word||!meaning){toast('Hãy nhập cả từ vựng và nghĩa nhé.');return}
+  state.notes=Array.isArray(state.notes)?state.notes:[];
+  state.notes.unshift({id:'m'+Date.now().toString(36)+Math.random().toString(36).slice(2,8),word,meaning,createdAt:Date.now()});
+  save();$('memoryForm').reset();renderNotes();$('memoryWord').focus();toast('Đã lưu vào sổ ghi nhớ 📒');
+}
+function renderNotes(){
+  const list=$('memoryList');if(!list)return;
+  state.notes=Array.isArray(state.notes)?state.notes:[];
+  const q=($('memorySearch')?.value||'').trim().toLocaleLowerCase('vi');
+  const filtered=state.notes.filter(n=>String(n.word||'').toLocaleLowerCase('vi').includes(q)||String(n.meaning||'').toLocaleLowerCase('vi').includes(q));
+  const count=$('memoryCount'),filteredCount=$('memoryFilteredCount');
+  if(count)count.textContent=state.notes.length+' mục đã lưu';
+  if(filteredCount)filteredCount.textContent=filtered.length+' từ';
+  if(!state.notes.length){list.innerHTML='<div class="memory-empty"><div class="memory-empty-icon">📖</div><strong>Cuốn sổ còn trống</strong><p>Thêm từ tiếng Đức và nghĩa đầu tiên để bắt đầu bộ sưu tập của bạn.</p></div>';return}
+  if(!filtered.length){list.innerHTML='<div class="memory-empty"><div class="memory-empty-icon">🔎</div><strong>Chưa tìm thấy từ này</strong><p>Thử một từ hoặc nghĩa khác nhé.</p></div>';return}
+  list.innerHTML=filtered.map(n=>{
+    const date=n.createdAt?new Date(n.createdAt).toLocaleDateString('vi-VN',{day:'2-digit',month:'2-digit',year:'numeric'}):'Đã lưu';
+    return `<article class="memory-item"><div class="memory-item-top"><span class="memory-kind">🇩🇪 TỪ VỰNG</span><time class="memory-date">${date}</time></div><h3 class="memory-word">${esc(n.word||'')}</h3><div class="memory-meaning is-hidden">${esc(n.meaning||'')}</div><div class="memory-actions"><button class="btn ghost" type="button" onclick="toggleMemoryMeaning(this)">👁 Hiện nghĩa</button><button class="btn line delete-memory" type="button" onclick="deleteMemory('${esc(n.id)}')">🗑 Xóa</button></div></article>`;
+  }).join('');
+}
+function toggleMemoryMeaning(button){
+  const item=button?.closest('.memory-item'),meaning=item?.querySelector('.memory-meaning');if(!meaning)return;
+  const hidden=meaning.classList.toggle('is-hidden');button.textContent=hidden?'👁 Hiện nghĩa':'🙈 Ẩn nghĩa';
+}
+function deleteMemory(id){
+  const note=(state.notes||[]).find(n=>n.id===id);if(!note)return;
+  if(!confirm('Xóa “'+note.word+'” khỏi sổ ghi nhớ?'))return;
+  state.notes=state.notes.filter(n=>n.id!==id);save();renderNotes();toast('Đã xóa ghi chú.');
+}
 function renderWords(){const q=$('search').value.trim().toLocaleLowerCase('de'),lv=$('levelFilter').value,tp=$('typeFilter').value;let list=VOCAB.filter(w=>(!q||(w.de+' '+w.vi).toLocaleLowerCase().includes(q))&&(!lv||w.level===lv)&&(!tp||w.type===tp));$('shownWords').textContent=list.length;const pagesize=60;pageIndex=Math.min(pageIndex,Math.max(0,Math.ceil(list.length/pagesize)-1));const slice=list.slice(pageIndex*pagesize,(pageIndex+1)*pagesize);$('wordlist').innerHTML=slice.map(w=>`<div class="wordrow"><div><div class="deword">${esc(w.de)}</div><div class="wordtype">${esc(w.type||'Từ vựng')}</div></div><div>${esc(w.vi)}</div><div><span class="badge">${esc(w.level)}</span><button title="Nghe phát âm" onclick="speak(${JSON.stringify(w.de)})" style="background:transparent;font-size:18px">🔊</button></div></div>`).join('')||'<div class="empty">Không tìm thấy từ phù hợp.</div>'}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function nextWords(){pageIndex++;renderWords();$('wordlist').scrollTop=0}
