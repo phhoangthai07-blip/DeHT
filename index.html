@@ -146,6 +146,36 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
 @media(max-width:850px){.memory-layout{grid-template-columns:1fr}.memory-hero{gap:14px}.memory-sparkle{font-size:31px}}
 @media(max-width:480px){.memory-hero{align-items:flex-start;padding:19px;gap:12px}.memory-orb{flex-basis:56px;width:56px;height:56px;border-radius:19px;font-size:30px}.memory-sparkle{display:none}.memory-hero h2{font-size:23px}.memory-hero p{font-size:13px}.memory-item{padding:13px}.memory-list-head{align-items:flex-start}}
 
+
+
+/* DeHT v1.4.0 — theme selector + tactile response */
+.theme-settings-panel{margin-top:18px;padding:clamp(16px,3vw,22px);border:1px solid rgba(255,255,255,.88);border-radius:23px;background:rgba(255,255,255,.43);box-shadow:0 12px 34px rgba(64,58,125,.07),inset 0 1px 0 rgba(255,255,255,.9);backdrop-filter:blur(24px) saturate(155%);-webkit-backdrop-filter:blur(24px) saturate(155%)}
+.theme-settings-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}.theme-settings-icon{width:45px;height:45px;flex:0 0 45px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(145deg,#fff,#e6e1ff);box-shadow:0 7px 18px #6857e81c;font-size:22px}.theme-settings-head h3{margin:0 0 3px;font-size:17px}.theme-settings-head p{font-size:12px;color:var(--muted);margin:0;max-width:620px}
+.theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.theme-option{position:relative;display:flex;align-items:center;gap:10px;min-width:0;padding:10px;text-align:left;color:var(--ink);border:1px solid rgba(255,255,255,.86);border-radius:16px;background:rgba(255,255,255,.52);box-shadow:0 5px 15px rgba(52,47,100,.045),inset 0 1px 0 #fff;transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,border-color .22s,background .22s;}
+.theme-option:hover{transform:translateY(-2px);box-shadow:0 9px 23px rgba(52,47,100,.10),inset 0 1px 0 #fff}.theme-option[aria-pressed="true"]{border-color:var(--primary);background:var(--theme-soft,rgba(238,234,255,.8));box-shadow:0 0 0 2px color-mix(in srgb,var(--primary) 15%,transparent),0 8px 22px rgba(52,47,100,.08),inset 0 1px 0 #fff}.theme-preview{width:45px;height:43px;flex:0 0 45px;display:flex;align-items:flex-end;justify-content:center;gap:3px;padding:7px;border-radius:12px;overflow:hidden;box-shadow:inset 0 1px 0 #ffffffa8}.theme-preview i{display:block;width:8px;border-radius:5px 5px 3px 3px;background:#fff9;box-shadow:0 1px 3px #0001}.theme-preview i:nth-child(1){height:14px}.theme-preview i:nth-child(2){height:23px}.theme-preview i:nth-child(3){height:18px}.theme-preview-purple{background:linear-gradient(135deg,#7565ef,#b8a9ff,#9bdcf3)}.theme-preview-ocean{background:linear-gradient(135deg,#1679bd,#51c2df,#b4eeff)}.theme-preview-mint{background:linear-gradient(135deg,#168b78,#62d1ac,#d4f5c8)}.theme-preview-sakura{background:linear-gradient(135deg,#c94387,#fb9ac4,#ffd8e7)}.theme-preview-sunset{background:linear-gradient(135deg,#d45c34,#ffae6e,#ffe0a9)}.theme-preview-midnight{background:linear-gradient(135deg,#171c36,#454f85,#8e8be4)}.theme-option-copy{display:grid;gap:2px;flex:1;min-width:0}.theme-option-copy strong{font-size:12px;line-height:1.3}.theme-option-copy small{font-size:10px;color:var(--muted);line-height:1.25}.theme-check{display:none;place-items:center;width:20px;height:20px;flex:0 0 20px;border-radius:50%;background:var(--primary);color:#fff;font-size:12px;font-weight:900}.theme-option[aria-pressed="true"] .theme-check{display:grid}
+.haptics-setting{display:flex;align-items:center;gap:11px;padding-top:15px;margin-top:15px;border-top:1px solid rgba(128,122,167,.16)}.haptics-symbol{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:14px;background:var(--theme-soft,rgba(238,234,255,.75));font-size:20px}.haptics-copy{display:grid;gap:2px;flex:1;min-width:0}.haptics-copy strong{font-size:13px}.haptics-copy small{font-size:11px;line-height:1.4;color:var(--muted)}.switch-control{position:relative;display:inline-flex;align-items:center;cursor:pointer}.switch-control input{position:absolute;opacity:0;width:1px;height:1px}.switch-track{display:block;width:47px;height:28px;padding:3px;border-radius:99px;background:#c8cbd8;box-shadow:inset 0 2px 4px #0002;transition:background .22s}.switch-track>span{display:block;width:22px;height:22px;border-radius:50%;background:white;box-shadow:0 2px 6px #0002;transition:transform .25s cubic-bezier(.2,.8,.2,1)}.switch-control input:checked+.switch-track{background:var(--primary)}.switch-control input:checked+.switch-track>span{transform:translateX(19px)}.switch-control input:focus-visible+.switch-track{outline:3px solid color-mix(in srgb,var(--primary) 35%,transparent);outline-offset:3px}
+/* Theme palette tokens */
+body[data-theme="purple"]{--primary:#6857e8;--primary2:#8c7cff;--theme-soft:rgba(230,224,255,.82);--theme-deep:#5647c7;--theme-glow:rgba(104,87,232,.22);--theme-hero:linear-gradient(125deg,rgba(102,86,232,.92),rgba(143,126,255,.78) 58%,rgba(116,197,255,.62));--theme-logo:linear-gradient(135deg,#7668ff,#a49aff);--theme-a:#c9c1ff99;--theme-b:#a7e6ff88;--theme-c:#ffd7ed88}
+body[data-theme="ocean"]{--primary:#2078bc;--primary2:#45b5db;--theme-soft:rgba(211,240,255,.86);--theme-deep:#165b98;--theme-glow:rgba(32,120,188,.22);--theme-hero:linear-gradient(125deg,rgba(24,99,166,.94),rgba(47,170,207,.80) 58%,rgba(132,226,241,.70));--theme-logo:linear-gradient(135deg,#1878bf,#6ad8ee);--theme-a:#9ddfff99;--theme-b:#93eff088;--theme-c:#c8e4ff88}
+body[data-theme="mint"]{--primary:#138876;--primary2:#43bea1;--theme-soft:rgba(210,248,236,.86);--theme-deep:#0d685b;--theme-glow:rgba(19,136,118,.20);--theme-hero:linear-gradient(125deg,rgba(17,119,101,.94),rgba(59,183,150,.81) 58%,rgba(164,224,166,.72));--theme-logo:linear-gradient(135deg,#138876,#7cdec2);--theme-a:#a2efd399;--theme-b:#b8f0d088;--theme-c:#e0f4bd88}
+body[data-theme="sakura"]{--primary:#c74788;--primary2:#f08fbd;--theme-soft:rgba(255,223,239,.88);--theme-deep:#a92d6d;--theme-glow:rgba(199,71,136,.22);--theme-hero:linear-gradient(125deg,rgba(190,54,122,.93),rgba(237,121,174,.82) 58%,rgba(255,191,204,.72));--theme-logo:linear-gradient(135deg,#c74788,#ffa8ce);--theme-a:#ffc1dc99;--theme-b:#e8cbff88;--theme-c:#ffe0cf88}
+body[data-theme="sunset"]{--primary:#cb602d;--primary2:#f29a52;--theme-soft:rgba(255,232,207,.88);--theme-deep:#a84223;--theme-glow:rgba(203,96,45,.22);--theme-hero:linear-gradient(125deg,rgba(184,66,38,.94),rgba(239,135,71,.84) 58%,rgba(255,207,122,.75));--theme-logo:linear-gradient(135deg,#d85e2f,#ffbd71);--theme-a:#ffd3a299;--theme-b:#ffeaa288;--theme-c:#ffc7d188}
+body[data-theme="midnight"]{--bg:#171a2c;--card:rgba(34,38,61,.88);--ink:#f2f3ff;--muted:#b4b9d4;--line:rgba(194,198,255,.16);--shadow:0 14px 40px rgba(0,0,0,.22);--primary:#9b91ff;--primary2:#b6afff;--theme-soft:rgba(71,69,119,.75);--theme-deep:#7e74e5;--theme-glow:rgba(126,116,229,.24);--theme-hero:linear-gradient(125deg,rgba(43,49,98,.98),rgba(77,84,151,.88) 58%,rgba(44,130,160,.82));--theme-logo:linear-gradient(135deg,#5950b4,#9a91ff);--theme-a:#6c65c955;--theme-b:#3a9fb355;--theme-c:#aa6eaa33;color:var(--ink)}
+body[data-theme="purple"],body[data-theme="ocean"],body[data-theme="mint"],body[data-theme="sakura"],body[data-theme="sunset"]{background:radial-gradient(ellipse at 12% 8%,var(--theme-a) 0,transparent 32%),radial-gradient(ellipse at 88% 22%,var(--theme-b) 0,transparent 30%),radial-gradient(ellipse at 55% 95%,var(--theme-c) 0,transparent 34%),linear-gradient(135deg,#fbfcff 0%,#f2f5fb 48%,#fffaff 100%);background-attachment:fixed}
+body[data-theme] .hero,body[data-theme] .pet-hero{background:var(--theme-hero)!important;box-shadow:0 22px 55px var(--theme-glow),inset 0 1px 0 rgba(255,255,255,.38)}body[data-theme] .logo{background:var(--theme-logo)}body[data-theme] .btn.primary{background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 94%,white),color-mix(in srgb,var(--primary2) 82%,white));box-shadow:0 8px 20px var(--theme-glow)}body[data-theme] .btn.ghost{background:var(--theme-soft);color:var(--theme-deep)}body[data-theme] .eyebrow{color:var(--primary)}body[data-theme] .progress span{background:linear-gradient(90deg,var(--primary),var(--primary2))}body[data-theme] .iconbox,body[data-theme] .ranknum,body[data-theme] .badge,body[data-theme] .pet-store-count{background:var(--theme-soft);color:var(--theme-deep)}body[data-theme] .task-indicator{background:linear-gradient(135deg,rgba(255,255,255,.92),var(--theme-soft));box-shadow:0 6px 22px var(--theme-glow),inset 0 1px 0 #fff}body[data-theme] .task-item.active{color:var(--theme-deep)}body[data-theme] .pet-filter.active{background:var(--primary);border-color:var(--primary2);box-shadow:0 5px 15px var(--theme-glow)}body[data-theme] .theme-option[aria-pressed="true"]{border-color:var(--primary)}body[data-theme] .memory-kind{background:var(--theme-soft);color:var(--theme-deep)}body[data-theme] .info-entry-icon,body[data-theme] .memory-orb,body[data-theme] .memory-form-icon,body[data-theme] .info-brand-mark{background:linear-gradient(145deg,#ffffffdc,var(--theme-soft))}body[data-theme] .field:focus{border-color:var(--primary);box-shadow:0 0 0 4px var(--theme-glow)}body[data-theme] .answer:hover{border-color:var(--primary);background:var(--theme-soft)}
+body[data-theme="midnight"]{background:radial-gradient(ellipse at 10% 8%,#474c9677 0,transparent 35%),radial-gradient(ellipse at 88% 22%,#205f7777 0,transparent 34%),linear-gradient(145deg,#171a2c,#202641 55%,#1b1a31);background-attachment:fixed}
+body[data-theme="midnight"] .panel,body[data-theme="midnight"] .pill,body[data-theme="midnight"] .lesson,body[data-theme="midnight"] .quizcard,body[data-theme="midnight"] .answer,body[data-theme="midnight"] .modalbox,body[data-theme="midnight"] .field,body[data-theme="midnight"] .searchbar input,body[data-theme="midnight"] .searchbar select,body[data-theme="midnight"] .info-entry,body[data-theme="midnight"] .theme-settings-panel,body[data-theme="midnight"] .theme-option,body[data-theme="midnight"] .memory-form,body[data-theme="midnight"] .memory-notebook,body[data-theme="midnight"] .memory-item,body[data-theme="midnight"] .memory-input,body[data-theme="midnight"] .memory-textarea,body[data-theme="midnight"] .memory-search,body[data-theme="midnight"] .shop-item{background:rgba(30,34,55,.76)!important;border-color:rgba(205,210,255,.15)!important;color:var(--ink);box-shadow:0 10px 32px rgba(0,0,0,.13),inset 0 1px 0 rgba(255,255,255,.055)}
+body[data-theme="midnight"] .panel[style],body[data-theme="midnight"] .panel[style] h3{color:var(--ink)}body[data-theme="midnight"] .field,body[data-theme="midnight"] input,body[data-theme="midnight"] textarea,body[data-theme="midnight"] select{color:var(--ink)}body[data-theme="midnight"] .btn.line{background:rgba(42,47,73,.86);color:var(--ink)}body[data-theme="midnight"] .btn.ghost{background:rgba(74,72,126,.76);color:#e5e2ff}body[data-theme="midnight"] .theme-settings-icon,body[data-theme="midnight"] .theme-preview,body[data-theme="midnight"] .haptics-symbol,body[data-theme="midnight"] .memory-orb,body[data-theme="midnight"] .memory-form-icon,body[data-theme="midnight"] .iconbox{background:rgba(88,91,143,.40)}body[data-theme="midnight"] .memory-meaning{background:rgba(46,73,94,.48);color:#e4f2ff}body[data-theme="midnight"] .memory-meaning.is-hidden:after{background:rgba(44,48,75,.95);color:#c7c5ff}body[data-theme="midnight"] .info-version-card{background:linear-gradient(120deg,rgba(70,65,120,.75),rgba(35,80,103,.7));border-color:rgba(205,210,255,.15)}body[data-theme="midnight"] .info-version-card strong,body[data-theme="midnight"] .info-label,body[data-theme="midnight"] .info-entry-arrow{color:#c2bdff}body[data-theme="midnight"] .info-detail-row{border-bottom-color:rgba(205,210,255,.12)}body[data-theme="midnight"] .info-detail-icon{background:rgba(255,255,255,.08)}body[data-theme="midnight"] .memory-hero{background:linear-gradient(125deg,rgba(43,49,80,.92),rgba(53,54,91,.8) 45%,rgba(37,75,93,.82));border-color:rgba(205,210,255,.15)}body[data-theme="midnight"] .memory-hero p,body[data-theme="midnight"] .memory-hero-copy .eyebrow,body[data-theme="midnight"] .memory-label{color:#c5c4e9}body[data-theme="midnight"] .bottom-taskbar{background:rgba(28,32,52,.82);border-color:rgba(217,220,255,.18)}body[data-theme="midnight"] .task-item{color:#c6c9e7}body[data-theme="midnight"] .task-item.active{color:#f2f1ff}body[data-theme="midnight"] .quiz-actions{background:rgba(27,30,48,.96);border-top-color:rgba(217,220,255,.15)}body[data-theme="midnight"] .answer-streak-badge{background:rgba(74,68,117,.9);color:#e3deff;border-color:rgba(205,210,255,.16)}body[data-theme="midnight"] .answer.correct{background:rgba(29,99,77,.5);border-color:#36bd8b}body[data-theme="midnight"] .answer.wrong{background:rgba(125,49,65,.42);border-color:#e97777}body[data-theme="midnight"] .shop-item.is-equipped{background:rgba(64,61,110,.9)!important;border-color:var(--primary)!important}
+
+/* Press/spring physics on all primary interactions; motion-disabled users retain static styling. */
+button,.btn,.answer,.task-item,.pet-filter,.theme-option{touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .24s cubic-bezier(.2,.9,.2,1.15),box-shadow .22s ease,border-color .22s ease,background .22s ease}
+button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.theme-option:active{transform:scale(.965);box-shadow:inset 0 2px 5px rgba(35,30,80,.14),0 1px 3px rgba(35,30,80,.06)}
+.tactile-pop{animation:dehtTactilePop .34s cubic-bezier(.16,1.2,.3,1) both}
+@keyframes dehtTactilePop{0%{filter:brightness(1);box-shadow:0 0 0 rgba(0,0,0,0)}32%{filter:brightness(1.045);box-shadow:inset 0 2px 7px rgba(35,30,80,.13),0 2px 7px rgba(35,30,80,.06)}68%{filter:brightness(1.02)}100%{filter:brightness(1);}}
+@media(prefers-reduced-motion:reduce){button,.btn,.answer,.task-item,.pet-filter,.theme-option,.tactile-pop{animation:none!important;transition:none!important}}
+@media(max-width:760px){.theme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.theme-option{padding:9px;gap:8px}}
+@media(max-width:400px){.theme-grid{grid-template-columns:1fr}.theme-preview{width:42px;height:40px;flex-basis:42px}}
+
 </style>
 </head>
 <body>
@@ -232,6 +262,18 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
     <div class="panel"><div class="panel-head"><div><h3>👤 Tài khoản DeHT</h3><p>Đăng nhập để chuẩn bị đồng bộ tiến độ giữa các thiết bị.</p></div><span class="badge" id="authBadge">Chưa kết nối</span></div>
       <div id="authStatus" class="muted">Hiện app đang chạy ở chế độ ngoại tuyến cục bộ. Bạn có thể học ngay, không cần đăng nhập.</div>
       <div class="bar" style="margin-top:16px"><button class="btn primary" onclick="openAuth()">Đăng nhập / tạo tài khoản</button></div>
+      <div class="theme-settings-panel" aria-labelledby="themeHeading">
+        <div class="theme-settings-head"><div class="theme-settings-icon" aria-hidden="true">🎨</div><div><h3 id="themeHeading">Giao diện &amp; màu sắc</h3><p>Chọn tông màu Liquid Glass theo sở thích. Lựa chọn được lưu trên thiết bị.</p></div></div>
+        <div class="theme-grid" role="group" aria-label="Chọn chủ đề màu sắc">
+          <button type="button" class="theme-option" data-theme-choice="purple" onclick="setTheme('purple')" aria-pressed="true"><span class="theme-preview theme-preview-purple"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Tím sương</strong><small>Lavender Glass</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+          <button type="button" class="theme-option" data-theme-choice="ocean" onclick="setTheme('ocean')" aria-pressed="false"><span class="theme-preview theme-preview-ocean"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Đại dương</strong><small>Ocean Blue</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+          <button type="button" class="theme-option" data-theme-choice="mint" onclick="setTheme('mint')" aria-pressed="false"><span class="theme-preview theme-preview-mint"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Bạc hà</strong><small>Mint Garden</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+          <button type="button" class="theme-option" data-theme-choice="sakura" onclick="setTheme('sakura')" aria-pressed="false"><span class="theme-preview theme-preview-sakura"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Hồng Sakura</strong><small>Sakura Pink</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+          <button type="button" class="theme-option" data-theme-choice="sunset" onclick="setTheme('sunset')" aria-pressed="false"><span class="theme-preview theme-preview-sunset"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Hoàng hôn</strong><small>Sunset Peach</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+          <button type="button" class="theme-option" data-theme-choice="midnight" onclick="setTheme('midnight')" aria-pressed="false"><span class="theme-preview theme-preview-midnight"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Đêm thiên hà</strong><small>Midnight Glass</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
+        </div>
+        <div class="haptics-setting"><div class="haptics-symbol" aria-hidden="true">📳</div><div class="haptics-copy"><strong>Phản hồi khi chạm</strong><small>Hiệu ứng nhấn nảy và rung nhẹ trên thiết bị hỗ trợ.</small></div><label class="switch-control"><input id="hapticsToggle" type="checkbox" checked onchange="setHaptics(this.checked)" aria-label="Bật rung nhẹ khi chạm"><span class="switch-track"><span></span></span></label></div>
+      </div>
       <button type="button" class="info-entry" onclick="openInfo()" aria-haspopup="dialog" aria-controls="infoModal">
         <span class="info-entry-icon" aria-hidden="true">ℹ️</span>
         <span class="info-entry-copy"><strong>Thông tin</strong><small>Phiên bản, nhà phát triển và thông tin về DeHT</small></span>
@@ -240,7 +282,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
       <div class="panel" style="margin-top:18px;background:#fafaff;box-shadow:none"><h3>🔐 Bảo mật</h3><p style="margin-top:6px">Chỉ đặt <b>Project URL</b> và <b>anon/public key</b> trong ứng dụng web. Tuyệt đối không đưa <b>service_role key</b> vào HTML. Bật Row Level Security (RLS) để người dùng chỉ truy cập dữ liệu của chính mình.</p></div>
     </div>
   </section>
-  <div class="footer">DeHT • Học một chút, tiến bộ mỗi ngày 🇩🇪<br>Phiên bản <span id="footerVersion">1.3.0</span> • Dữ liệu tiến độ lưu trên trình duyệt nếu chưa kết nối Supabase.</div>
+  <div class="footer">DeHT • Học một chút, tiến bộ mỗi ngày 🇩🇪<br>Phiên bản <span id="footerVersion">1.4.0</span> • Dữ liệu tiến độ lưu trên trình duyệt nếu chưa kết nối Supabase.</div>
 </main>
 </div>
 <nav class="bottom-taskbar" id="bottomTaskbar" aria-label="Thanh điều hướng DeHT">
@@ -256,11 +298,11 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
 <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" onclick="if(event.target===this)closeInfo()">
   <div class="modalbox info-modalbox">
     <div class="info-modal-header"><div class="info-brand-mark" aria-hidden="true">🇩🇪</div><div class="grow"><div class="eyebrow">GIỚI THIỆU ỨNG DỤNG</div><h2 id="infoTitle">Thông tin DeHT</h2><p class="muted">Học một chút, tiến bộ mỗi ngày.</p></div><button class="info-close" type="button" onclick="closeInfo()" aria-label="Đóng thông tin">✕</button></div>
-    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.3.0</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
+    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.4.0</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
     <div class="info-details">
       <div class="info-detail-row"><span class="info-detail-icon">👨‍💻</span><div><small>Phát triển bởi</small><strong>Pham Hoang Thai</strong></div></div>
       <div class="info-detail-row"><span class="info-detail-icon">🎓</span><div><small>Ứng dụng</small><strong>DeHT — Học tiếng Đức</strong><p>Hỗ trợ học từ vựng, luyện tập và theo dõi tiến độ từ A1 đến B2.</p></div></div>
-      <div class="info-detail-row"><span class="info-detail-icon">✨</span><div><small>Thiết kế</small><strong>Liquid Glass</strong><p>Giao diện kính trong mờ, điều hướng nhanh và linh vật Cú Hoot.</p></div></div>
+      <div class="info-detail-row"><span class="info-detail-icon">✨</span><div><small>Thiết kế</small><strong>Liquid Glass</strong><p>Nhiều chủ đề màu Liquid Glass, hiệu ứng nhấn kiểu lò xo và linh vật Cú Hoot.</p></div></div>
       <div class="info-detail-row"><span class="info-detail-icon">💾</span><div><small>Dữ liệu & quyền riêng tư</small><strong>Lưu trên thiết bị</strong><p>Tiến độ hiện được lưu trong trình duyệt. Đồng bộ tài khoản cần cấu hình Supabase; không nhập khóa bí mật quản trị vào ứng dụng.</p></div></div>
       <div class="info-note">Thông tin phiên bản sẽ được cập nhật cùng mỗi bản phát hành mới.</div>
     </div>
@@ -271,7 +313,7 @@ body.quiz-open .bottom-taskbar{opacity:0;visibility:hidden;pointer-events:none;t
 <div class="toast" id="toast"></div>
 <script>
 // Cập nhật hằng số này khi phát hành phiên bản DeHT mới.
-const APP_VERSION = '1.3.0';
+const APP_VERSION = '1.4.0';
 function syncAppVersion(){
   const footer=document.getElementById('footerVersion');
   const info=document.getElementById('infoVersion');
@@ -300,14 +342,48 @@ const SUPABASE_URL = 'DAN_PROJECT_URL_CUA_BAN_VAO_DAY';
 const SUPABASE_PUBLISHABLE_KEY = 'DAN_PUBLISHABLE_KEY_CUA_BAN_VAO_DAY';
 const $=id=>document.getElementById(id);
 const KEY='deht-v1-progress';
-const defaultState={xp:0,gems:0,streak:0,answerStreak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],notes:[],username:'Người học',user:null,pet:{owned:[],equipped:null,level:1}};
+const defaultState={xp:0,gems:0,streak:0,answerStreak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],notes:[],username:'Người học',user:null,theme:'purple',haptics:true,pet:{owned:[],equipped:null,level:1}};
 let state=loadState(), pageIndex=0, quiz={items:[],index:0,correct:0,gemsEarned:0,answered:false,mode:'lesson',current:null};
 state.answerStreak=Math.max(0,Number(state.answerStreak)||0);
 state.notes=Array.isArray(state.notes)?state.notes:[];
+const THEME_NAMES={purple:'Tím sương',ocean:'Đại dương',mint:'Bạc hà',sakura:'Hồng Sakura',sunset:'Hoàng hôn',midnight:'Đêm thiên hà'};
+function applyTheme(){
+  const allowed=Object.keys(THEME_NAMES);
+  if(!allowed.includes(state.theme))state.theme='purple';
+  document.body.dataset.theme=state.theme;
+  document.querySelectorAll('[data-theme-choice]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.themeChoice===state.theme)));
+  const themeMeta=document.querySelector('meta[name="theme-color"]');
+  const colors={purple:'#6b5cff',ocean:'#2078bc',mint:'#138876',sakura:'#c74788',sunset:'#cb602d',midnight:'#171a2c'};
+  if(themeMeta)themeMeta.setAttribute('content',colors[state.theme]||colors.purple);
+  const toggle=document.getElementById('hapticsToggle');
+  if(toggle)toggle.checked=state.haptics!==false;
+}
+function setTheme(theme){
+  if(!Object.prototype.hasOwnProperty.call(THEME_NAMES,theme))return;
+  state.theme=theme;applyTheme();save();toast('Đã chuyển sang giao diện '+THEME_NAMES[theme]+' ✨');
+  try{if(state.haptics!==false&&navigator.vibrate)navigator.vibrate(10)}catch(e){}
+}
+function setHaptics(enabled){state.haptics=!!enabled;save();toast(state.haptics?'Đã bật phản hồi khi chạm 📳':'Đã tắt rung; hiệu ứng nhấn vẫn hoạt động');}
 function loadState(){try{return {...defaultState,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return {...defaultState}}}
 function save(){localStorage.setItem(KEY,JSON.stringify(state));renderStats()}
 function today(){return new Date().toLocaleDateString('en-CA')}
 function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2400)}
+applyTheme();
+// Haptic touch feedback on compatible mobile browsers; the spring animation works everywhere.
+document.addEventListener('pointerdown',event=>{
+  if(event.pointerType!=='touch'||state.haptics===false)return;
+  const control=event.target.closest('button:not(:disabled),[role="button"]');
+  if(!control)return;
+  try{if(typeof navigator.vibrate==='function')navigator.vibrate(9)}catch(e){}
+},{passive:true});
+document.addEventListener('click',event=>{
+  const control=event.target.closest('button:not(:disabled)');
+  if(!control)return;
+  control.classList.remove('tactile-pop');
+  void control.offsetWidth;
+  control.classList.add('tactile-pop');
+  window.setTimeout(()=>control.classList.remove('tactile-pop'),380);
+});
 const PET_ITEMS=[
 {id:'hat',name:'Mũ phi công',emoji:'🧢',price:12,desc:'Mũ phi công cho chuyến phiêu lưu.',slot:'head',slotName:'Đầu'},
 {id:'crown',name:'Vương miện hoàng gia',emoji:'👑',price:35,desc:'Cho Cú Hoot vẻ ngoài quý tộc.',slot:'head',slotName:'Đầu'},
