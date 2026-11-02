@@ -186,6 +186,63 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
 @media(max-width:580px){.translation-launch{align-items:flex-start;flex-direction:column}.translation-launch .btn{width:100%}.translation-actions .btn{padding:11px 8px}}
 
 </style>
+
+<style id="deht-writing-cosmic-v1">
+#writingModal{z-index:2147483000;display:none;position:fixed;inset:0;overflow:auto;align-items:flex-start;justify-content:center;padding:12px;background:radial-gradient(ellipse at 50% 38%,rgba(0,91,255,.18),rgba(1,5,35,.90) 62%),linear-gradient(180deg,#020a3a,#00145b 55%,#02082c);color:#f4f8ff}
+#writingModal.show{display:flex}
+#writingModal:before,#writingModal:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0}
+#writingModal:before{opacity:.48;background-image:radial-gradient(2px 2px at 12% 18%,#fff 55%,transparent 70%),radial-gradient(1px 1px at 82% 23%,#9edbff 55%,transparent 70%),radial-gradient(2px 2px at 68% 78%,#fff 55%,transparent 70%),radial-gradient(1px 1px at 31% 67%,#8bcfff 55%,transparent 70%),radial-gradient(1px 1px at 92% 86%,#fff 55%,transparent 70%);background-size:240px 220px,310px 260px,280px 240px,190px 210px,350px 270px;animation:wrStars 24s linear infinite}
+#writingModal:after{background:radial-gradient(ellipse at 8% 84%,rgba(0,113,255,.38),transparent 32%),radial-gradient(ellipse at 96% 14%,rgba(0,205,255,.22),transparent 30%);filter:blur(22px)}
+@keyframes wrStars{to{background-position:240px 440px,-310px 520px,280px -480px,-190px 420px,350px -540px}}
+#writingModal *{box-sizing:border-box}
+.writing-shell{position:relative;z-index:1;width:min(1160px,100%);margin:auto;min-height:min(760px,calc(100dvh - 24px));}
+.writing-topbar{height:70px;display:flex;align-items:center;gap:18px;padding:0 8px;color:#fff}
+.writing-back{width:48px;height:48px;border-radius:50%;border:1px solid #9edaff88;background:linear-gradient(145deg,#ffffff35,#2479ff33);color:white;font-size:29px;box-shadow:0 0 24px #178cff88,inset 0 1px 0 #ffffffa8;backdrop-filter:blur(20px);cursor:pointer}
+.writing-brand{display:flex;align-items:center;gap:10px;font-size:18px;text-shadow:0 1px 10px #78caff}.writing-owl{font-size:31px}.writing-divider{height:28px;width:1px;background:#ffffff55;margin:0 8px}
+.writing-level-pill{margin-left:auto;border:1px solid #83caff88;border-radius:30px;padding:11px 18px;background:linear-gradient(120deg,#0b58cfaa,#061e78aa);box-shadow:0 0 22px #0c8fff55,inset 0 1px 0 #ffffff66;backdrop-filter:blur(18px)}
+.writing-layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:18px;align-items:start}
+.writing-card{position:relative;padding:clamp(20px,3vw,34px);border-radius:32px;border:1px solid #9adfffaa;background:linear-gradient(145deg,rgba(7,65,190,.78),rgba(3,25,112,.78) 58%,rgba(5,74,184,.72));box-shadow:0 0 0 1px #ffffff22 inset,0 20px 70px #00113f99,0 0 42px #138cff66,inset 0 2px 18px #ffffff25;backdrop-filter:blur(32px) saturate(180%);-webkit-backdrop-filter:blur(32px) saturate(180%);overflow:hidden}
+.writing-card:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(115deg,#ffffff22,transparent 24%,transparent 72%,#42c7ff18);opacity:.9}
+.writing-card-title{position:relative;text-align:center;font-size:clamp(19px,2.2vw,25px);font-weight:900;margin-bottom:24px;text-shadow:0 2px 15px #4ab9ff}
+.writing-card-title span{color:#4eeaff;margin-right:8px}
+.writing-progress-row{display:flex;justify-content:space-between;font-weight:850;margin-bottom:9px}
+.writing-progress{height:12px;border-radius:99px;background:#001d70aa;overflow:hidden;box-shadow:inset 0 2px 5px #001044}
+.writing-progress span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#7cecff,#35aaff,#b0f6ff);box-shadow:0 0 18px #5ddaff;transition:width .55s cubic-bezier(.2,.9,.2,1)}
+.writing-source-label,.writing-answer-label{font-size:12px;letter-spacing:.08em;font-weight:900;color:#a9e8ff;margin:22px 0 9px}
+.writing-prompt{padding:24px;border-radius:22px;border:1px solid #9adfff88;background:linear-gradient(135deg,#0c5bd4aa,#0a2b9caa);box-shadow:inset 0 1px 0 #ffffff55,0 8px 26px #00134c66;font-size:clamp(21px,3vw,30px);line-height:1.38;font-weight:900;text-shadow:0 2px 10px #001a5c}
+.writing-slots-wrap{position:relative;min-height:94px;padding:18px 18px;display:flex;align-items:center;border:1px solid #a6e5ffbb;border-radius:23px;background:linear-gradient(120deg,#0a3d9dcc,#041c70cc);box-shadow:inset 0 2px 12px #00114e99,0 8px 28px #00144f66;cursor:text;overflow-x:auto;scrollbar-width:thin}
+.writing-slots{display:flex;align-items:center;gap:5px;flex-wrap:wrap;min-width:0;position:relative;z-index:1}
+.writing-char{width:clamp(22px,3.4vw,39px);height:51px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#062c8c,#03206c);border:1px solid #2878df66;color:#fff;font-size:clamp(17px,2.1vw,23px);font-weight:900;box-shadow:inset 0 1px 3px #ffffff14,0 3px 8px #00114466;transition:background .15s,border-color .15s,transform .16s,box-shadow .16s}
+.writing-char.space{width:13px;height:40px;background:transparent;border:0;box-shadow:none}
+.writing-char.filled{background:linear-gradient(145deg,#10a9ff,#0756c7);border-color:#7ceaff;box-shadow:0 0 13px #00bfff77,inset 0 1px 3px #ffffff77;transform:translateY(-1px)}
+.writing-char.correct{background:linear-gradient(145deg,#20e7a0,#008f76);border-color:#8affd8;box-shadow:0 0 15px #00ffbd99}
+.writing-char.wrong{background:linear-gradient(145deg,#ff5b75,#a20d4a);border-color:#ff9db1;animation:wrShake .32s ease}
+.writing-char.cursor{border:2px solid #45efff;box-shadow:0 0 0 3px #20dfff33,0 0 18px #13dfff;animation:wrPulse 1.2s ease-in-out infinite}
+@keyframes wrPulse{50%{box-shadow:0 0 0 6px #20dfff18,0 0 25px #13dfff}}
+@keyframes wrShake{0%,100%{transform:translateX(0)}20%{transform:translateX(-5px)}40%{transform:translateX(5px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.writing-hidden-input{position:absolute;opacity:.01;width:2px;height:2px;left:20px;bottom:5px;border:0;padding:0;color:transparent;background:transparent;caret-color:transparent;z-index:0}
+.writing-keyboard-hint{color:#a9d9ff;font-size:12px;margin:8px 3px 0}
+.writing-feedback{min-height:48px;margin-top:16px;padding:13px 16px;border-radius:16px;background:#062a86aa;border:1px solid #79bfff55;color:#d9efff;font-weight:750}
+.writing-feedback.good{background:#006c5a88;border-color:#6effd0;color:#caffeb}.writing-feedback.bad{background:#8b164b88;border-color:#ff86ad;color:#ffe0e9;animation:wrShake .32s ease}.writing-feedback.hint{background:#76501988;border-color:#ffd878;color:#fff0c3}
+.writing-bottom{display:flex;align-items:center;gap:10px;margin-top:17px;flex-wrap:wrap}
+.writing-bottom-spacer{flex:1}
+.writing-hint-btn,.writing-clear-btn,.writing-check-btn,.writing-next-btn{min-height:48px;padding:0 18px;border-radius:16px;border:1px solid #9edfff99;color:#fff;font-weight:900;cursor:pointer;transition:transform .18s cubic-bezier(.2,1.4,.4,1),filter .18s,box-shadow .18s;box-shadow:0 7px 18px #00134f66,inset 0 1px 0 #ffffff66;backdrop-filter:blur(15px)}
+.writing-hint-btn{background:linear-gradient(130deg,#0877e9,#0750bd)}.writing-clear-btn{background:linear-gradient(130deg,#174da8,#092c7e)}.writing-check-btn,.writing-next-btn{background:linear-gradient(130deg,#00caff,#0875e9);box-shadow:0 0 22px #00bfff66,inset 0 1px 0 #ffffff99}
+.writing-hint-btn:active,.writing-clear-btn:active,.writing-check-btn:active,.writing-next-btn:active{transform:scale(.95) translateY(2px);filter:brightness(1.2)}
+.writing-aside{display:flex;flex-direction:column;gap:14px;padding-top:4px}
+.writing-aside-chip{padding:12px 15px;border:1px solid #7acbff77;border-radius:18px;background:#0645a9aa;color:#d9f4ff;font-weight:850;text-align:center;backdrop-filter:blur(20px)}
+.writing-side-card{padding:18px;border-radius:22px;border:1px solid #76caff88;background:linear-gradient(145deg,#0753c9bb,#061d78bb);box-shadow:0 12px 30px #00164f66,inset 0 1px 0 #ffffff55;backdrop-filter:blur(22px)}
+.writing-side-card b{display:block;font-size:17px;margin:5px 0}.writing-side-card p{margin:0;color:#d5eaff;line-height:1.5;font-size:14px}.writing-side-icon{font-size:26px}
+.writing-tip-card{border-color:#ffd77c88;background:linear-gradient(145deg,#174daacc,#152c80cc)}
+.writing-level-select{padding:17px;border-radius:20px;border:1px solid #8ad8ff66;background:#05266e99;display:grid;gap:7px;backdrop-filter:blur(18px)}
+.writing-level-select label{font-size:12px;color:#b8eaff;font-weight:850;margin-top:5px}
+.writing-level-select select{width:100%;padding:10px;border-radius:12px;color:#fff;background:#063d9c;border:1px solid #79cfff77}
+.writing-level-select option{color:#07183d;background:#fff}
+@media(max-width:850px){.writing-layout{grid-template-columns:1fr}.writing-aside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.writing-level-select{grid-column:1/-1}.writing-shell{max-width:720px}}
+@media(max-width:560px){#writingModal{padding:5px}.writing-topbar{height:60px;gap:8px}.writing-brand{font-size:14px;gap:6px}.writing-owl{font-size:25px}.writing-back{width:40px;height:40px}.writing-level-pill{font-size:11px;padding:8px 10px}.writing-card{padding:16px;border-radius:24px}.writing-prompt{padding:18px}.writing-slots-wrap{padding:12px 10px;min-height:80px}.writing-char{width:25px;height:42px;border-radius:9px}.writing-slots{gap:4px}.writing-aside{grid-template-columns:1fr 1fr}.writing-side-card{padding:13px}.writing-side-card p{font-size:12px}.writing-bottom{gap:7px}.writing-hint-btn,.writing-clear-btn,.writing-check-btn,.writing-next-btn{padding:0 12px;min-height:44px;font-size:13px}}
+@media(prefers-reduced-motion:reduce){#writingModal *,#writingModal *:before,#writingModal *:after{animation:none!important;transition:none!important}}
+</style>
+
 <style id="deht-1-5-2-liquid-glass-notifications">
 /* DeHT 1.5.2 — notifications are rendered in a top-level floating glass layer. */
 #toast.toast{
@@ -288,7 +345,7 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
     <div class="stats"><div class="pill"><span>🔥</span><b id="streak">0</b> ngày</div><div class="pill"><span>⚡</span><b id="xp">0</b> XP</div><div class="pill"><span>💎</span><b id="gems">0</b></div></div>
   </div>
   <section class="section active" id="home">
-    <div class="hero"><div><div class="eyebrow" style="color:#e7e2ff">BÀI HỌC HÔM NAY</div><h2>Hallo! Sẵn sàng học chưa?</h2><p>Chỉ 5 phút mỗi ngày. Học từ mới, luyện phản xạ và mở khóa thành tích trên hành trình A1 → B2.</p><button class="btn white" onclick="startQuiz('lesson')">Bắt đầu bài học&nbsp; →</button></div><div class="hero-owl">🦉</div></div>
+    <div class="hero"><div><div class="eyebrow" style="color:#e7e2ff">BÀI HỌC HÔM NAY</div><h2>Hallo! Sẵn sàng học chưa?</h2><p>Chỉ 5 phút mỗi ngày. Học từ mới, luyện phản xạ và mở khóa thành tích trên hành trình A1 → B2.</p><button class="btn white" onclick="startQuiz('lesson')">Bắt đầu bài học&nbsp; →</button><button class="btn" style="margin:10px 0 0;background:rgba(255,255,255,.18);color:white;border:1px solid rgba(255,255,255,.4)" onclick="openWriting()">✍️ Viết câu tiếng Đức</button></div><div class="hero-owl">🦉</div></div>
     <div class="translation-launch" style="margin:0 0 16px;border-color:#bcb1ff;background:linear-gradient(120deg,#fff 0%,#f0edff 55%,#e9f7ff 100%)"><div><span class="translation-tag">BÀI LUYỆN MỚI · A1–B2</span><h3>✍️ Dịch câu tiếng Việt sang tiếng Đức</h3><p>Đọc câu hỏi, tự nhập câu tiếng Đức rồi nhấn Enter để kiểm tra.</p></div><button class="btn primary" type="button" onclick="openTranslation()">Bắt đầu ngay →</button></div>
     <div class="grid">
       <div class="panel"><div class="iconbox">📖</div><h3>Từ vựng đã học</h3><div class="big" id="learnedCount">0</div><p>Trên tổng <span id="totalWords">1600</span> mục từ/cụm từ</p><div class="progress"><span id="learnedBar" style="width:0%"></span></div></div>
@@ -320,6 +377,11 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
       <div class="panel"><div class="iconbox">⚡</div><h3>Kiểm tra nhanh</h3><p>5 câu ngẫu nhiên để kiểm tra phản xạ.</p><button class="btn ghost" style="margin-top:15px" onclick="startQuiz('quick')">Làm 5 câu</button></div>
     </div>
     <div class="translation-launch"><div><span class="translation-tag">DẠNG BÀI MỚI · 80 CÂU</span><h3>✍️ Dịch câu Việt → Đức</h3><p>Đọc câu tiếng Việt, tự viết câu tiếng Đức. Có A1, A2, B1 và B2.</p></div><button class="btn primary" type="button" onclick="openTranslation()">Bắt đầu luyện →</button></div>
+    <div class="writing-launch" role="region" aria-label="Viết lại câu tiếng Đức">
+      <div class="writing-launch-icon">✍️</div>
+      <div class="writing-launch-copy"><span class="writing-tag">DẠNG BÀI MỚI · A1–B2</span><h3>Viết lại câu bằng tiếng Đức</h3><p>Điền từng chữ vào ô trống, nhận phản hồi đúng/sai ngay lập tức và gợi ý khi cần.</p></div>
+      <button class="writing-launch-btn" type="button" onclick="openWriting()">Bắt đầu viết <span>→</span></button>
+    </div>
     <div class="panel" style="margin-top:16px"><h3>📌 Cách ôn tập</h3><p style="margin-top:7px">Sau mỗi câu, hãy chọn “Đã nhớ” hoặc “Cần ôn”. Từ khó sẽ được đưa vào hàng đợi ôn tập sớm hơn. Tiến độ được lưu trên thiết bị hiện tại; đồng bộ tài khoản sẽ được bật sau khi bạn kết nối Supabase.</p></div>
   </section>
   <section class="section" id="vocab">
@@ -405,10 +467,56 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
  <div class="translation-prompt" id="trPrompt">Tôi học tiếng Đức mỗi ngày.</div><label for="trAnswer" class="muted" style="display:block;margin:0 0 7px;font-weight:800">Nhập câu tiếng Đức của bạn</label><input id="trAnswer" class="translation-answer" type="text" autocomplete="off" autocapitalize="sentences" placeholder="Schreibe hier auf Deutsch …" onkeydown="if(event.key==='Enter')checkTranslation()">
  <div id="trFeedback" class="translation-feedback" aria-live="polite">Hãy tự dịch câu trên rồi nhấn Kiểm tra.</div><div class="translation-actions"><button class="btn line" type="button" onclick="closeTranslation()">← Thoát</button><button class="btn primary" type="button" id="trCheck" onclick="checkTranslation()">Kiểm tra ↵</button><button class="btn primary" type="button" id="trNext" onclick="nextTranslation()" style="display:none">Tiếp tục →</button></div>
  </div></div>
+
+<div class="modal" id="writingModal" aria-modal="true" role="dialog" aria-label="Viết lại câu bằng tiếng Đức">
+  <div class="writing-shell">
+    <div class="writing-topbar">
+      <button class="writing-back" type="button" onclick="closeWriting()" aria-label="Thoát">←</button>
+      <div class="writing-brand"><span class="writing-owl">🦉</span><b>DeHT</b><span class="writing-divider"></span><span>✦ XP <b id="wrXp">0</b></span><span>💎 <b id="wrGems">0</b></span></div>
+      <div class="writing-level-pill">✦ <span id="wrLevelLabel">A1 · Viết câu</span></div>
+    </div>
+    <div class="writing-layout">
+      <main class="writing-card">
+        <div class="writing-card-title"><span>✍️</span> Viết lại câu bằng tiếng Đức</div>
+        <div class="writing-progress-row"><b id="wrCounter">Câu 1 / 15</b><b id="wrPercent">0%</b></div>
+        <div class="writing-progress"><span id="wrProgressBar"></span></div>
+        <div class="writing-source-label">◉ CÂU TIẾNG VIỆT</div>
+        <div class="writing-prompt" id="wrPrompt">Tôi đã ở Berlin được 2 năm rồi.</div>
+        <div class="writing-answer-label">✎ CÂU TRẢ LỜI CỦA BẠN</div>
+        <div class="writing-slots-wrap" id="wrSlotsWrap" onclick="focusWritingInput()" role="group" aria-label="Các ô nhập từng chữ">
+          <div class="writing-slots" id="wrSlots"></div>
+          <span class="writing-cursor" id="wrCursor" aria-hidden="true"></span>
+          <input id="wrInput" class="writing-hidden-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Nhập từng chữ tiếng Đức">
+        </div>
+        <div class="writing-keyboard-hint">Nhập bằng bàn phím. Dùng Backspace để xóa chữ vừa nhập.</div>
+        <div class="writing-feedback" id="wrFeedback" aria-live="polite">Hãy nhập từng chữ để hoàn thành câu tiếng Đức.</div>
+        <div class="writing-bottom">
+          <button class="writing-hint-btn" type="button" onclick="showWritingHint()">💡 Gợi ý <b id="wrHintCount">3</b></button>
+          <div class="writing-bottom-spacer"></div>
+          <button class="writing-clear-btn" type="button" onclick="clearWritingAnswer()">⌫ Xóa</button>
+          <button class="writing-check-btn" id="wrCheck" type="button" onclick="checkWriting()">✓ Kiểm tra</button>
+          <button class="writing-next-btn" id="wrNext" type="button" onclick="nextWriting()" style="display:none">Câu tiếp →</button>
+        </div>
+      </main>
+      <aside class="writing-aside">
+        <div class="writing-aside-chip">🚀 Luyện viết · A1–B2</div>
+        <div class="writing-side-card" id="wrSideFeedback"><span class="writing-side-icon">✦</span><b>Sẵn sàng chưa?</b><p>Điền từng chữ vào ô trống. Chữ đúng sẽ sáng xanh.</p></div>
+        <div class="writing-side-card writing-tip-card" id="wrTipCard"><span class="writing-side-icon">💡</span><b>Gợi ý</b><p id="wrTipText">Bạn có thể dùng nút Gợi ý nếu gặp khó khăn.</p></div>
+        <div class="writing-level-select">
+          <label for="wrLevel">Cấp độ</label>
+          <select id="wrLevel" onchange="changeWritingLevel(this.value)"><option>A1</option><option>A2</option><option>B1</option><option>B2</option><option value="ALL">Trộn A1–B2</option></select>
+          <label for="wrCount">Số câu</label>
+          <select id="wrCount" onchange="restartWriting()"><option value="10">10 câu</option><option value="15" selected>15 câu</option><option value="20">20 câu</option><option value="80">Tất cả câu</option></select>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
 <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" onclick="if(event.target===this)closeInfo()">
   <div class="modalbox info-modalbox">
     <div class="info-modal-header"><div class="info-brand-mark" aria-hidden="true">🇩🇪</div><div class="grow"><div class="eyebrow">GIỚI THIỆU ỨNG DỤNG</div><h2 id="infoTitle">Thông tin DeHT</h2><p class="muted">Học một chút, tiến bộ mỗi ngày.</p></div><button class="info-close" type="button" onclick="closeInfo()" aria-label="Đóng thông tin">✕</button></div>
-    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.5.0</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
+    <div class="info-version-card"><div><span class="info-label">PHIÊN BẢN</span><strong id="infoVersion">1.5.4</strong></div><span class="info-live-badge"><span></span> DeHT</span></div>
     <div class="info-details">
       <div class="info-detail-row"><span class="info-detail-icon">👨‍💻</span><div><small>Phát triển bởi</small><strong>Pham Hoang Thai</strong></div></div>
       <div class="info-detail-row"><span class="info-detail-icon">🎓</span><div><small>Ứng dụng</small><strong>DeHT — Học tiếng Đức</strong><p>Hỗ trợ học từ vựng, luyện tập và theo dõi tiến độ từ A1 đến B2.</p></div></div>
@@ -423,7 +531,7 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 <script>
 // Cập nhật hằng số này khi phát hành phiên bản DeHT mới.
-const APP_VERSION = '1.5.3';
+const APP_VERSION = '1.5.4';
 function syncAppVersion(){
   const footer=document.getElementById('footerVersion');
   const info=document.getElementById('infoVersion');
@@ -856,6 +964,142 @@ function normalizeGerman(s){return String(s||'').toLocaleLowerCase('de').normali
 function checkTranslation(){if(translationState.answered||!translationState.items.length)return;const typed=document.getElementById('trAnswer').value.trim();if(!typed){document.getElementById('trFeedback').textContent='Bạn hãy nhập câu trả lời trước nhé.';return;}const t=translationState.items[translationState.index],ok=normalizeGerman(typed)===normalizeGerman(t.de);translationState.answered=true;document.getElementById('trAnswer').disabled=true;const box=document.getElementById('trFeedback');box.className='translation-feedback '+(ok?'good':'bad');if(ok){translationState.correct++;state.xp=(Number(state.xp)||0)+10;state.gems=(Number(state.gems)||0)+1;state.daily=state.daily||{date:today(),xp:0};if(state.daily.date!==today())state.daily={date:today(),xp:0};state.daily.xp+=10;box.innerHTML='✓ Chính xác! <b>+10 XP · +1 💎</b><br><span>Đáp án: '+esc(t.de)+'</span>';}else{box.innerHTML='Chưa chính xác. Đáp án tham khảo: <b>'+esc(t.de)+'</b><br><span>Hãy chú ý trật tự từ, chia động từ và viết hoa danh từ.</span>';}
  state.history=state.history||[];save();renderStats();document.getElementById('trCheck').style.display='none';document.getElementById('trNext').style.display='';document.getElementById('trNext').textContent=translationState.index===translationState.items.length-1?'Hoàn thành ✓':'Tiếp tục →';}
 function nextTranslation(){if(!translationState.answered)return;if(translationState.index<translationState.items.length-1){translationState.index++;showTranslation();}else{const total=translationState.items.length;const correct=translationState.correct;state.history=state.history||[];state.history.push({date:today(),correct,total,kind:'translation'});if(state.lastStudy!==today()){const y=new Date();y.setDate(y.getDate()-1);const yesterday=y.toLocaleDateString('en-CA');state.streak=state.lastStudy===yesterday?state.streak+1:1;state.lastStudy=today();ensurePet();}save();closeTranslation();toast('Hoàn thành dịch câu: '+correct+'/'+total+' câu đúng · +'+(correct*10)+' XP');go('home');}}
+
+// DeHT Cosmic Write: type one German character at a time with immediate feedback.
+let writingState={level:'A1',items:[],index:0,position:0,errors:{},hints:3,answered:false,correct:0};
+function openWriting(){
+  const modal=document.getElementById('writingModal');
+  modal.classList.add('show');document.body.classList.add('quiz-open');
+  document.getElementById('wrXp').textContent=Number(state.xp)||0;
+  document.getElementById('wrGems').textContent=Number(state.gems)||0;
+  restartWriting();
+}
+function closeWriting(){document.getElementById('writingModal').classList.remove('show');document.body.classList.remove('quiz-open');}
+function changeWritingLevel(level){writingState.level=level;document.getElementById('wrLevelLabel').textContent=(level==='ALL'?'A1–B2':level)+' · Viết câu';restartWriting();}
+function restartWriting(){
+  const pool=TRANSLATION_BANK.filter(x=>writingState.level==='ALL'||x.level===writingState.level);
+  const requested=Number(document.getElementById('wrCount').value)||15;
+  writingState.items=shuffle([...pool]).slice(0,Math.min(requested,pool.length));
+  writingState.index=0;writingState.correct=0;writingState.hints=3;writingState.errors={};writingState.answered=false;
+  document.getElementById('wrHintCount').textContent=writingState.hints;
+  if(!writingState.items.length){document.getElementById('wrPrompt').textContent='Chưa có câu hỏi ở cấp độ này.';return;}
+  renderWritingQuestion();
+}
+function writingTarget(){return writingState.items[writingState.index]?.de||'';}
+function renderWritingQuestion(){
+  const item=writingState.items[writingState.index];if(!item)return;
+  writingState.position=0;writingState.errors={};writingState.answered=false;
+  document.getElementById('wrPrompt').textContent=item.vi;
+  document.getElementById('wrCounter').textContent=`Câu ${writingState.index+1} / ${writingState.items.length}`;
+  document.getElementById('wrPercent').textContent=Math.round(writingState.index/writingState.items.length*100)+'%';
+  document.getElementById('wrProgressBar').style.width=(writingState.index/writingState.items.length*100)+'%';
+  document.getElementById('wrLevelLabel').textContent=item.level+' · Viết câu';
+  document.getElementById('wrInput').value='';
+  document.getElementById('wrInput').disabled=false;
+  document.getElementById('wrFeedback').className='writing-feedback';
+  document.getElementById('wrFeedback').textContent='Hãy nhập từng chữ để hoàn thành câu tiếng Đức.';
+  document.getElementById('wrSideFeedback').innerHTML='<span class="writing-side-icon">✦</span><b>Sẵn sàng chưa?</b><p>Chữ đúng sẽ sáng xanh. Nếu sai, ô hiện tại sẽ rung đỏ.</p>';
+  document.getElementById('wrTipText').textContent='Bạn có 3 lượt gợi ý. Sai một chữ quá 3 lần sẽ hiện gợi ý tự động.';
+  document.getElementById('wrCheck').style.display='';document.getElementById('wrNext').style.display='none';
+  document.getElementById('wrHintCount').textContent=writingState.hints;
+  drawWritingSlots();setTimeout(focusWritingInput,120);
+}
+function focusWritingInput(){if(!writingState.answered)document.getElementById('wrInput').focus({preventScroll:true});}
+function drawWritingSlots(wrongIndex=-1){
+  const target=writingTarget(),wrap=document.getElementById('wrSlots');
+  wrap.innerHTML='';
+  let letterIndex=0;
+  for(let i=0;i<target.length;i++){
+    const ch=target[i],span=document.createElement('span');
+    if(ch===' '){span.className='writing-char space';span.textContent='';}
+    else{
+      span.className='writing-char';
+      if(i<writingState.position) {span.textContent=ch;span.classList.add('filled','correct');}
+      else if(i===wrongIndex){span.textContent='';span.classList.add('wrong');}
+      else if(i===writingState.position){span.textContent='';span.classList.add('cursor');}
+      else {span.textContent='';}
+      span.dataset.pos=i;letterIndex++;
+    }
+    wrap.appendChild(span);
+  }
+  const active=wrap.querySelector('.writing-char.cursor')||wrap.querySelector('.writing-char.wrong');
+  if(active)active.scrollIntoView({block:'nearest',inline:'nearest'});
+}
+function processWritingInput(raw){
+  if(writingState.answered)return;
+  const input=document.getElementById('wrInput');const target=writingTarget();
+  const chars=Array.from(String(raw||'').normalize('NFC'));
+  input.value='';
+  if(!chars.length)return;
+  for(const char of chars){
+    if(writingState.position>=target.length)break;
+    const expected=target[writingState.position];
+    if(char.toLocaleLowerCase('de')===expected.toLocaleLowerCase('de')){
+      writingState.position++;
+      // Spaces and punctuation are accepted in sequence, but the cursor always follows the target.
+      while(writingState.position<target.length && target[writingState.position]===' ')writingState.position++;
+      document.getElementById('wrFeedback').className='writing-feedback good';
+      document.getElementById('wrFeedback').textContent='✓ Chính xác! Tiếp tục nhé.';
+      drawWritingSlots();
+      if(writingState.position>=target.length)completeWritingInput();
+    }else{
+      const key=String(writingState.position);
+      writingState.errors[key]=(writingState.errors[key]||0)+1;
+      document.getElementById('wrFeedback').className='writing-feedback bad';
+      document.getElementById('wrFeedback').textContent='Chưa đúng chữ này. Thử lại nhé!';
+      drawWritingSlots(writingState.position);
+      const count=writingState.errors[key];
+      if(count>3){
+        const tip='Gợi ý: chữ tiếp theo là “'+expected+'”.';
+        document.getElementById('wrFeedback').className='writing-feedback hint';
+        document.getElementById('wrFeedback').textContent='💡 '+tip;
+        document.getElementById('wrTipText').textContent=tip;
+        document.getElementById('wrSideFeedback').innerHTML='<span class="writing-side-icon">💡</span><b>Gợi ý xuất hiện</b><p>'+esc(tip)+'</p>';
+      }
+    }
+  }
+}
+function completeWritingInput(){
+  document.getElementById('wrFeedback').className='writing-feedback good';
+  document.getElementById('wrFeedback').textContent='✓ Bạn đã nhập đủ các chữ! Nhấn “Kiểm tra” để xác nhận câu.';
+  document.getElementById('wrSideFeedback').innerHTML='<span class="writing-side-icon">🟢</span><b>Đã nhập đủ</b><p>Kiểm tra lại câu trả lời của bạn.</p>';
+}
+function checkWriting(){
+  if(writingState.answered)return;
+  const target=writingTarget();
+  if(writingState.position<target.length){document.getElementById('wrFeedback').className='writing-feedback bad';document.getElementById('wrFeedback').textContent='Bạn chưa nhập hết câu. Hãy điền các ô còn trống.';return;}
+  writingState.answered=true;writingState.correct++;
+  state.xp=(Number(state.xp)||0)+10;state.gems=(Number(state.gems)||0)+1;
+  state.daily=state.daily||{date:today(),xp:0};if(state.daily.date!==today())state.daily={date:today(),xp:0};state.daily.xp+=10;
+  save();renderStats();
+  document.getElementById('wrXp').textContent=Number(state.xp)||0;document.getElementById('wrGems').textContent=Number(state.gems)||0;
+  document.getElementById('wrFeedback').className='writing-feedback good';document.getElementById('wrFeedback').textContent='✓ Chính xác! +10 XP · +1 💎';
+  document.getElementById('wrSideFeedback').innerHTML='<span class="writing-side-icon">✅</span><b>Chính xác!</b><p>Hoàn thành câu viết. Bạn nhận được 10 XP và 1 kim cương.</p>';
+  document.getElementById('wrInput').disabled=true;document.getElementById('wrCheck').style.display='none';document.getElementById('wrNext').style.display='';
+  document.getElementById('wrNext').textContent=writingState.index===writingState.items.length-1?'Hoàn thành ✓':'Câu tiếp →';
+}
+function nextWriting(){
+  if(!writingState.answered)return;
+  if(writingState.index<writingState.items.length-1){writingState.index++;renderWritingQuestion();return;}
+  state.history=state.history||[];state.history.push({date:today(),correct:writingState.correct,total:writingState.items.length,kind:'cosmic-writing'});
+  if(state.lastStudy!==today()){const y=new Date();y.setDate(y.getDate()-1);const yesterday=y.toLocaleDateString('en-CA');state.streak=state.lastStudy===yesterday?state.streak+1:1;state.lastStudy=today();ensurePet();}
+  save();closeWriting();toast('Hoàn thành viết câu: '+writingState.correct+'/'+writingState.items.length+' câu đúng');go('home');
+}
+function clearWritingAnswer(){
+  if(writingState.answered)return;
+  writingState.position=0;writingState.errors={};document.getElementById('wrFeedback').className='writing-feedback';document.getElementById('wrFeedback').textContent='Đã xóa. Hãy nhập lại từ đầu.';
+  drawWritingSlots();focusWritingInput();
+}
+function showWritingHint(){
+  if(writingState.answered)return;
+  if(writingState.hints<=0){document.getElementById('wrTipText').textContent='Bạn đã dùng hết lượt gợi ý trong lượt học này.';return;}
+  writingState.hints--;document.getElementById('wrHintCount').textContent=writingState.hints;
+  const target=writingTarget();const next=target[writingState.position]||'';
+  const hint='Chữ tiếp theo: “'+next+'”';
+  document.getElementById('wrFeedback').className='writing-feedback hint';document.getElementById('wrFeedback').textContent='💡 '+hint;
+  document.getElementById('wrTipText').textContent=hint;document.getElementById('wrSideFeedback').innerHTML='<span class="writing-side-icon">💡</span><b>Gợi ý</b><p>'+esc(hint)+'</p>';
+}
+
 function renderLeaderboard(){const people=[{name:state.username||'Bạn',xp:state.xp,emoji:'🦉',me:true},{name:'Lena',xp:1280,emoji:'🌷'},{name:'Max',xp:940,emoji:'🚀'},{name:'Minh Anh',xp:760,emoji:'🌟'},{name:'Jonas',xp:540,emoji:'🎧'}].sort((a,b)=>b.xp-a.xp);$('leaderboard').innerHTML=people.map((p,i)=>`<div class="rankrow"><div class="ranknum">${i+1}</div><div style="font-size:25px">${p.emoji}</div><div class="grow"><b>${esc(p.name)} ${p.me?'(bạn)':''}</b><small>${p.me?'Điểm của bạn trên thiết bị này':'Người học minh họa'}</small></div><b>${p.xp} XP</b></div>`).join('')}
 function exportProgress(){const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),progress:state},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='deht-progress.json';a.click();URL.revokeObjectURL(a.href);toast('Đã xuất tệp tiến độ.')}
 function openAuth(){$('authMsg').textContent='';$('authModal').classList.add('show')}
@@ -880,6 +1124,18 @@ async function authAction(kind){
   }catch(err){$('authMsg').textContent='Lỗi: '+err.message+' — kiểm tra URL/key, kết nối mạng và cấu hình Email Auth.'}
 }
 function speakRandom(){const w=VOCAB[Math.floor(Math.random()*VOCAB.length)];speak(w.de);toast(w.de+' — '+w.vi)}
+
+const writingInput=document.getElementById('wrInput');
+if(writingInput){
+  writingInput.addEventListener('input',()=>{const value=writingInput.value;if(value)processWritingInput(value);});
+  writingInput.addEventListener('keydown',event=>{
+    if(event.key==='Backspace' && !writingState.answered){
+      event.preventDefault();
+      if(writingState.position>0){writingState.position--;while(writingState.position>0&&writingTarget()[writingState.position-1]===' ')writingState.position--;drawWritingSlots();document.getElementById('wrFeedback').className='writing-feedback';document.getElementById('wrFeedback').textContent='Đã xóa chữ cuối cùng.';}
+    }else if(event.key==='Enter'){event.preventDefault();if(writingState.position>=writingTarget().length)checkWriting();}
+  });
+}
+
 renderStats();renderWords();
 </script>
 </body></html>
