@@ -335,8 +335,52 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
   }
 }
 </style>
+
+<style id="deht-cosmic-liquid-glass-v160">
+:root{--cosmic-background:radial-gradient(ellipse at 18% 22%,rgba(0,153,255,.5),transparent 38%),radial-gradient(ellipse at 82% 72%,rgba(0,73,220,.48),transparent 42%),linear-gradient(135deg,#02091f,#061d50 48%,#020a28);--cosmic-brightness:1;--glass-blur:22px;--cosmic-speed:1;--glass-fill:rgba(8,34,78,.43);--glass-line:rgba(158,220,255,.28);--glass-shadow:0 18px 55px rgba(0,5,28,.3),inset 0 1px 0 rgba(255,255,255,.16)}
+html{background:#02091f}body{position:relative;isolation:isolate;min-height:100vh;background:transparent!important;color:#f1f7ff!important}
+.cosmos-scene{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:var(--cosmic-background);filter:brightness(var(--cosmic-brightness));transform:translateZ(0)}
+.cosmos-scene:before,.cosmos-scene:after{content:"";position:absolute;inset:-30%;pointer-events:none}
+.cosmos-scene:before{opacity:.48;background-image:radial-gradient(2px 2px at 7% 13%,#fff 60%,transparent 75%),radial-gradient(1px 1px at 18% 76%,#9deaff 60%,transparent 75%),radial-gradient(2px 2px at 37% 34%,#fff 60%,transparent 75%),radial-gradient(1px 1px at 58% 18%,#b7e8ff 60%,transparent 75%),radial-gradient(2px 2px at 77% 61%,#fff 60%,transparent 75%),radial-gradient(1px 1px at 91% 38%,#7bd7ff 60%,transparent 75%);background-size:260px 240px,310px 300px,390px 360px,270px 310px,330px 290px,420px 380px;animation:cosmicStarDrift calc(85s / max(.15,var(--cosmic-speed))) linear infinite}
+.cosmos-scene:after{background:radial-gradient(ellipse at 50% 0%,rgba(0,174,255,.16),transparent 42%),linear-gradient(120deg,transparent 25%,rgba(27,146,255,.08) 43%,transparent 58%);mix-blend-mode:screen}
+.cosmos-nebula{position:absolute;inset:-20%;background:radial-gradient(ellipse at 20% 38%,rgba(0,121,255,.24),transparent 32%),radial-gradient(ellipse at 75% 25%,rgba(0,210,255,.16),transparent 30%),radial-gradient(ellipse at 70% 80%,rgba(37,80,255,.23),transparent 36%);filter:blur(35px);animation:nebulaFloat calc(38s / max(.15,var(--cosmic-speed))) ease-in-out infinite alternate}
+.cosmos-ribbon{position:absolute;width:125vw;height:25vh;left:-12vw;border-radius:50%;filter:blur(38px);opacity:.28;transform:rotate(-17deg);background:linear-gradient(90deg,transparent,rgba(0,139,255,.1),rgba(70,207,255,.42),rgba(0,93,255,.12),transparent)}
+.ribbon-a{top:22%;animation:ribbonFlow calc(34s / max(.15,var(--cosmic-speed))) ease-in-out infinite alternate}.ribbon-b{top:67%;opacity:.19;transform:rotate(14deg);animation:ribbonFlow calc(48s / max(.15,var(--cosmic-speed))) ease-in-out infinite alternate-reverse}
+.cosmos-stars{position:absolute;inset:-10%;opacity:.34;background-image:radial-gradient(circle,rgba(183,231,255,.85) 0 1px,transparent 2px),radial-gradient(circle,rgba(74,169,255,.7) 0 1px,transparent 2px);background-size:97px 113px,151px 167px;background-position:0 0,44px 71px;animation:cosmicStarDrift calc(55s / max(.15,var(--cosmic-speed))) linear infinite}
+.stars-b{opacity:.18;background-size:211px 193px,263px 229px;animation-duration:calc(95s / max(.15,var(--cosmic-speed)))}
+.cosmos-dust{position:absolute;inset:0;opacity:.42;background-image:radial-gradient(circle,rgba(101,212,255,.7) 0 1px,transparent 2px),radial-gradient(circle,rgba(255,255,255,.5) 0 1px,transparent 2px);background-size:183px 207px,257px 233px;animation:dustFloat calc(44s / max(.15,var(--cosmic-speed))) linear infinite}
+.cosmos-orb{position:absolute;width:clamp(110px,18vw,260px);aspect-ratio:1;border-radius:50%;filter:blur(2px);opacity:.13;background:radial-gradient(circle at 35% 30%,#d4f7ff,rgba(0,147,255,.65) 25%,rgba(0,42,150,.08) 68%,transparent 72%);box-shadow:0 0 75px rgba(0,155,255,.3);animation:orbFloat calc(28s / max(.15,var(--cosmic-speed))) ease-in-out infinite alternate}
+.orb-a{top:12%;right:7%}.orb-b{bottom:5%;left:5%;width:clamp(80px,12vw,180px);animation-delay:-12s}
+@keyframes cosmicStarDrift{to{background-position:260px 480px,-310px 600px,390px -520px,-270px 610px,330px -490px,-420px 550px}}
+@keyframes nebulaFloat{to{transform:translate3d(4%,3%,0) scale(1.08);filter:blur(48px)}}@keyframes ribbonFlow{to{translate:8vw 4vh;scale:1.08 1.25}}@keyframes dustFloat{to{background-position:183px -207px,-257px 233px}}@keyframes orbFloat{to{transform:translate3d(24px,-30px,0) scale(1.13)}}
+.app,.main{position:relative;z-index:1;background:transparent!important}.main{max-width:1360px}
+/* Glass surfaces: keep the cosmos visible through every primary surface. */
+.panel,.pill,.lesson,.quizcard,.translation-launch,.memory-hero,.memory-form,.memory-notebook,.theme-settings-panel,.info-entry,.modalbox,.bottom-taskbar,.side,.hero,.translation-prompt,.translation-actions,.wordrow,.rankrow,.pet-store-panel,.pet-model-stage,.writing-aside-card{
+ background:linear-gradient(135deg,rgba(12,48,99,.52),rgba(5,24,62,.36))!important;color:#f2f8ff!important;border:1px solid var(--glass-line)!important;box-shadow:var(--glass-shadow)!important;backdrop-filter:blur(var(--glass-blur)) saturate(165%)!important;-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(165%)!important
+}
+.panel p,.sub,.muted,.panel .muted,.lesson small,.wordtype,.memory-hint,.memory-hero p,.theme-settings-head p,.theme-option-copy small,.haptics-copy small,.footer{color:rgba(221,239,255,.72)!important}
+.hero{background:linear-gradient(120deg,rgba(0,100,210,.48),rgba(9,42,107,.36),rgba(0,178,218,.2))!important;border-radius:27px}
+.hero p{color:#e5f4ff!important}.eyebrow{color:#83dcff!important}.iconbox,.badge,.btn.ghost{background:rgba(48,132,221,.22)!important;color:#bfeaff!important;border:1px solid rgba(144,215,255,.2)}
+.btn.primary{background:linear-gradient(130deg,#087eea,#16b9df)!important;color:white!important;box-shadow:0 7px 24px rgba(0,155,255,.28),inset 0 1px 0 #ffffff66}.btn.line,.btn.ghost{color:#e8f5ff!important;border:1px solid rgba(150,216,255,.28)!important}
+.field,.searchbar input,.searchbar select,.translation-answer,.translation-settings select,.memory-input,.memory-textarea,.memory-search,.formgrid input{background:rgba(1,16,47,.55)!important;color:#f5fbff!important;border:1px solid rgba(143,211,255,.34)!important;backdrop-filter:blur(12px)}
+input::placeholder,textarea::placeholder{color:rgba(205,228,250,.5)!important}
+.progress{background:rgba(0,13,43,.62)!important}.progress span{background:linear-gradient(90deg,#51d9ff,#168bff,#a5f5ff)!important;box-shadow:0 0 14px #1abaff88}
+.bottom-taskbar{background:rgba(3,19,51,.66)!important;border-radius:24px!important;border-color:rgba(145,218,255,.32)!important}.task-item{color:#b5d8f4!important}.task-item.active{color:#fff!important}.task-indicator{background:linear-gradient(120deg,rgba(34,157,255,.36),rgba(56,222,255,.2))!important;border:1px solid rgba(139,222,255,.4);box-shadow:0 0 25px #129dff55,inset 0 1px 0 #ffffff55}
+.theme-option,.cosmic-preset,.cosmic-upload,.cosmic-reset{background:rgba(4,27,67,.48)!important;color:#eff9ff!important;border:1px solid rgba(150,218,255,.25)!important}.theme-option[aria-pressed=true],.cosmic-preset.selected{border-color:#66dfff!important;box-shadow:0 0 20px #0aaeff33,inset 0 1px 0 #ffffff33!important}
+.quizword,.memory-label,.memory-form-heading,.memory-list-head h3,.panel h3,.h1,.translation-prompt,.wordrow,.rankrow{color:#f4f9ff!important}.memory-hero{background:linear-gradient(120deg,rgba(0,106,203,.42),rgba(9,40,96,.38))!important}.memory-total,.memory-count-badge{background:rgba(21,137,212,.24)!important;color:#d7f5ff!important}
+.translation-prompt{background:linear-gradient(135deg,rgba(0,92,190,.42),rgba(12,39,104,.42))!important;color:#f0f9ff!important}.translation-actions{background:rgba(3,19,51,.82)!important}.translation-feedback{background:rgba(3,25,63,.6)!important;color:#e7f5ff!important}.translation-feedback.good{background:rgba(0,128,91,.4)!important}.translation-feedback.bad{background:rgba(160,30,68,.4)!important}
+.modal{background:rgba(0,7,25,.68)!important;backdrop-filter:blur(14px)}.modalbox{background:linear-gradient(145deg,rgba(8,39,87,.94),rgba(3,18,52,.94))!important}.modalbox h2,.modalbox h3{color:#f4faff}.modalbox p{color:#d4e8fa}
+#writingModal{background:transparent!important}#writingModal .writing-card{background:linear-gradient(145deg,rgba(7,65,150,.54),rgba(3,25,86,.56) 58%,rgba(5,74,155,.48))!important;backdrop-filter:blur(var(--glass-blur)) saturate(180%)!important}
+.cosmic-customizer{margin:18px 0;padding:18px;border-radius:20px;background:rgba(1,20,55,.35);border:1px solid rgba(144,214,255,.22)}.cosmic-customizer-title{display:flex;align-items:center;gap:12px;margin-bottom:14px}.cosmic-customizer-title>span{font-size:26px}.cosmic-customizer-title strong,.cosmic-customizer-title small{display:block}.cosmic-customizer-title small{font-size:12px;color:#bad7f0;margin-top:3px}.cosmic-presets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.cosmic-preset{display:flex;align-items:center;gap:8px;padding:8px;border-radius:13px;cursor:pointer;text-align:left;font-size:11px}.cosmic-preset i{width:30px;height:30px;border-radius:9px;flex:none;border:1px solid #ffffff55}.preset-blue{background:linear-gradient(135deg,#05123d,#087ed0,#54dfff)}.preset-purple{background:linear-gradient(135deg,#16062d,#7442ce,#d59cff)}.preset-pink{background:linear-gradient(135deg,#31092b,#bb3b9c,#ffadd9)}.preset-ocean{background:linear-gradient(135deg,#002c38,#007f9c,#55f0d8)}
+.cosmic-upload,.cosmic-reset{display:inline-flex;align-items:center;justify-content:center;padding:10px 13px;border-radius:12px;margin:12px 7px 5px 0;font-weight:800;font-size:12px;cursor:pointer}.cosmic-upload input{display:none}.cosmic-reset{opacity:.8}.cosmic-slider{margin-top:13px}.cosmic-slider label{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:800;color:#e8f5ff}.cosmic-slider output{color:#7cddff}.cosmic-slider input{width:100%;accent-color:#28bfff;margin-top:8px}
+#toast{background:rgba(4,32,76,.88)!important;color:#f3fbff!important;border:1px solid rgba(145,222,255,.36)!important;backdrop-filter:blur(22px)!important;box-shadow:0 12px 38px #00112f99!important}
+@media(max-width:700px){.cosmic-presets{grid-template-columns:repeat(2,minmax(0,1fr))}.main{padding-bottom:105px}.panel{padding:16px}.bottom-taskbar{bottom:10px}}
+@media(prefers-reduced-motion:reduce){.cosmos-scene *,.cosmos-scene:before,.cosmos-scene:after{animation:none!important}.cosmos-scene{scroll-behavior:auto}}
+</style>
+
 </head>
 <body>
+<div class="cosmos-scene" aria-hidden="true"><div class="cosmos-nebula"></div><div class="cosmos-ribbon ribbon-a"></div><div class="cosmos-ribbon ribbon-b"></div><div class="cosmos-stars stars-a"></div><div class="cosmos-stars stars-b"></div><div class="cosmos-dust"></div><div class="cosmos-orb orb-a"></div><div class="cosmos-orb orb-b"></div></div>
 <div class="app">
 
 <main class="main">
@@ -437,6 +481,20 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
           <button type="button" class="theme-option" data-theme-choice="sunset" onclick="setTheme('sunset')" aria-pressed="false"><span class="theme-preview theme-preview-sunset"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Hoàng hôn</strong><small>Sunset Peach</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
           <button type="button" class="theme-option" data-theme-choice="midnight" onclick="setTheme('midnight')" aria-pressed="false"><span class="theme-preview theme-preview-midnight"><i></i><i></i><i></i></span><span class="theme-option-copy"><strong>Đêm thiên hà</strong><small>Midnight Glass</small></span><span class="theme-check" aria-hidden="true">✓</span></button>
         </div>
+        <div class="cosmic-customizer">
+          <div class="cosmic-customizer-title"><span>🌌</span><div><strong>Không gian vũ trụ DeHT</strong><small>Chọn cảnh nền, tải ảnh riêng và tinh chỉnh hiệu ứng chuyển động.</small></div></div>
+          <div class="cosmic-presets">
+            <button type="button" class="cosmic-preset" data-cosmic="blue" onclick="setCosmicPreset('blue')"><i class="preset-blue"></i><b>Xanh ngân hà</b></button>
+            <button type="button" class="cosmic-preset" data-cosmic="purple" onclick="setCosmicPreset('purple')"><i class="preset-purple"></i><b>Tím tinh vân</b></button>
+            <button type="button" class="cosmic-preset" data-cosmic="pink" onclick="setCosmicPreset('pink')"><i class="preset-pink"></i><b>Hồng vũ trụ</b></button>
+            <button type="button" class="cosmic-preset" data-cosmic="ocean" onclick="setCosmicPreset('ocean')"><i class="preset-ocean"></i><b>Đại dương thiên hà</b></button>
+          </div>
+          <label class="cosmic-upload">＋ Tải ảnh nền từ máy tính<input id="cosmicImageInput" type="file" accept="image/*" onchange="loadCosmicImage(this)"></label>
+          <button type="button" class="cosmic-reset" onclick="resetCosmicImage()">Khôi phục nền mặc định</button>
+          <div class="cosmic-slider"><label for="cosmicBrightness">Độ sáng nền <output id="cosmicBrightnessValue">100%</output></label><input id="cosmicBrightness" type="range" min="45" max="140" value="100" oninput="updateCosmicSetting('brightness',this.value)"></div>
+          <div class="cosmic-slider"><label for="cosmicBlur">Độ mờ kính <output id="cosmicBlurValue">22px</output></label><input id="cosmicBlur" type="range" min="8" max="36" value="22" oninput="updateCosmicSetting('blur',this.value)"></div>
+          <div class="cosmic-slider"><label for="cosmicMotion">Tốc độ chuyển động <output id="cosmicMotionValue">100%</output></label><input id="cosmicMotion" type="range" min="0" max="160" value="100" oninput="updateCosmicSetting('motion',this.value)"></div>
+        </div>
         <div class="haptics-setting"><div class="haptics-symbol" aria-hidden="true">📳</div><div class="haptics-copy"><strong>Phản hồi khi chạm</strong><small>Hiệu ứng nhấn nảy và rung nhẹ trên thiết bị hỗ trợ.</small></div><label class="switch-control"><input id="hapticsToggle" type="checkbox" checked onchange="setHaptics(this.checked)" aria-label="Bật rung nhẹ khi chạm"><span class="switch-track"><span></span></span></label></div>
       </div>
       <button type="button" class="info-entry" onclick="openInfo()" aria-haspopup="dialog" aria-controls="infoModal">
@@ -531,7 +589,7 @@ button:active,.btn:active,.answer:active,.task-item:active,.pet-filter:active,.t
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 <script>
 // Cập nhật hằng số này khi phát hành phiên bản DeHT mới.
-const APP_VERSION = '1.5.4';
+const APP_VERSION = '1.6.0';
 function syncAppVersion(){
   const footer=document.getElementById('footerVersion');
   const info=document.getElementById('infoVersion');
@@ -652,7 +710,7 @@ const SUPABASE_URL = 'DAN_PROJECT_URL_CUA_BAN_VAO_DAY';
 const SUPABASE_PUBLISHABLE_KEY = 'DAN_PUBLISHABLE_KEY_CUA_BAN_VAO_DAY';
 const $=id=>document.getElementById(id);
 const KEY='deht-v1-progress';
-const defaultState={xp:0,gems:0,streak:0,answerStreak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],notes:[],username:'Người học',user:null,theme:'purple',haptics:true,pet:{owned:[],equipped:null,level:1}};
+const defaultState={xp:0,gems:0,streak:0,answerStreak:0,lastStudy:'',daily:{date:'',xp:0},learned:[],reviews:{},history:[],notes:[],username:'Người học',user:null,theme:'purple',haptics:true,cosmic:{preset:'blue',brightness:100,blur:22,motion:100,image:''},pet:{owned:[],equipped:null,level:1}};
 let state=loadState(), pageIndex=0, quiz={items:[],index:0,correct:0,gemsEarned:0,answered:false,mode:'lesson',current:null};
 state.answerStreak=Math.max(0,Number(state.answerStreak)||0);
 state.notes=Array.isArray(state.notes)?state.notes:[];
@@ -674,11 +732,24 @@ function setTheme(theme){
   try{if(state.haptics!==false&&navigator.vibrate)navigator.vibrate(10)}catch(e){}
 }
 function setHaptics(enabled){state.haptics=!!enabled;save();toast(state.haptics?'Đã bật phản hồi khi chạm 📳':'Đã tắt rung; hiệu ứng nhấn vẫn hoạt động');}
+const COSMIC_PRESETS={
+ blue:'radial-gradient(ellipse at 18% 22%,rgba(0,153,255,.50),transparent 38%),radial-gradient(ellipse at 82% 72%,rgba(0,73,220,.48),transparent 42%),linear-gradient(135deg,#02091f 0%,#061d50 48%,#020a28 100%)',
+ purple:'radial-gradient(ellipse at 18% 22%,rgba(155,78,255,.52),transparent 38%),radial-gradient(ellipse at 82% 72%,rgba(74,45,180,.5),transparent 42%),linear-gradient(135deg,#100722,#21104d 52%,#09051e)',
+ pink:'radial-gradient(ellipse at 18% 22%,rgba(255,91,190,.48),transparent 38%),radial-gradient(ellipse at 82% 72%,rgba(155,65,220,.48),transparent 42%),linear-gradient(135deg,#200822,#421044 52%,#12051f)',
+ ocean:'radial-gradient(ellipse at 18% 22%,rgba(0,225,222,.4),transparent 38%),radial-gradient(ellipse at 82% 72%,rgba(0,105,190,.5),transparent 42%),linear-gradient(135deg,#001d2b,#003b60 52%,#00152a)'
+};
+function cosmicConfig(){if(!state.cosmic||typeof state.cosmic!=='object')state.cosmic={preset:'blue',brightness:100,blur:22,motion:100,image:''};return state.cosmic;}
+function applyCosmic(){const c=cosmicConfig(),root=document.documentElement;const preset=COSMIC_PRESETS[c.preset]||COSMIC_PRESETS.blue;root.style.setProperty('--cosmic-background',c.image?`linear-gradient(rgba(0,12,38,.28),rgba(0,12,38,.48)),url("${c.image}") center/cover fixed`:preset);root.style.setProperty('--cosmic-brightness',(Number(c.brightness)||100)/100);root.style.setProperty('--glass-blur',(Number(c.blur)||22)+'px');root.style.setProperty('--cosmic-speed',Math.max(0,Number(c.motion)||0)/100);['Brightness','Blur','Motion'].forEach((k)=>{const map={Brightness:'brightness',Blur:'blur',Motion:'motion'},id='cosmic'+k,el=$(id),out=$(id+'Value');if(el)el.value=c[map[k]];if(out)out.textContent=k==='Blur'?c.blur+'px':c[map[k]]+'%';});document.querySelectorAll('[data-cosmic]').forEach(b=>b.classList.toggle('selected',b.dataset.cosmic===c.preset&&!c.image));}
+function setCosmicPreset(preset){if(!COSMIC_PRESETS[preset])return;const c=cosmicConfig();c.preset=preset;c.image='';applyCosmic();save();toast('Đã chuyển sang nền '+({blue:'Xanh ngân hà',purple:'Tím tinh vân',pink:'Hồng vũ trụ',ocean:'Đại dương thiên hà'}[preset]));}
+function updateCosmicSetting(key,value){const c=cosmicConfig();c[key]=Number(value);applyCosmic();save();}
+function loadCosmicImage(input){const file=input.files&&input.files[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Vui lòng chọn một tệp hình ảnh.');return;}const reader=new FileReader();reader.onload=()=>{const img=new Image();img.onload=()=>{const canvas=document.createElement('canvas'),max=1800,scale=Math.min(1,max/Math.max(img.width,img.height));canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);const data=canvas.toDataURL('image/jpeg',.78);const c=cosmicConfig();c.image=data;applyCosmic();try{save();toast('Đã áp dụng ảnh nền riêng của bạn.');}catch(e){c.image='';applyCosmic();toast('Ảnh quá lớn để lưu trên trình duyệt. Hãy chọn ảnh nhỏ hơn.');}};img.onerror=()=>toast('Không thể đọc ảnh này.');img.src=reader.result;};reader.readAsDataURL(file);}
+function resetCosmicImage(){const c=cosmicConfig();c.image='';c.preset='blue';applyCosmic();save();toast('Đã khôi phục nền xanh ngân hà.');}
 function loadState(){try{return {...defaultState,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return {...defaultState}}}
 function save(){localStorage.setItem(KEY,JSON.stringify(state));renderStats()}
 function today(){return new Date().toLocaleDateString('en-CA')}
 function toast(msg){const el=$('toast');if(!el)return;el.textContent=msg;clearTimeout(window.__dehtToastTimer);el.classList.remove('show');void el.offsetWidth;el.classList.add('show');window.__dehtToastTimer=setTimeout(()=>el.classList.remove('show'),3000)}
 applyTheme();
+applyCosmic();
 // Haptic touch feedback on compatible mobile browsers; the spring animation works everywhere.
 document.addEventListener('pointerdown',event=>{
   if(event.pointerType!=='touch'||state.haptics===false)return;
